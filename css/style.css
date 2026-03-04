@@ -162,11 +162,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .service-card__icon {
-  height: 180px; background: var(--primary-light);
+  height: 180px; background: var(--black);
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
 }
-.service-card__icon svg { width: 64px; height: 64px; fill: var(--primary); }
+.service-card__icon svg { width: 72px; height: 72px; fill: var(--primary); }
+.service-card__icon img.card-photo {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.4) saturate(0.3);
+  transition: all var(--transition);
+}
+.service-card:hover .service-card__icon img.card-photo {
+  filter: brightness(0.5) saturate(0.5);
+  transform: scale(1.05);
+}
+.service-card__icon-overlay {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  z-index: 2; pointer-events: none;
+}
+.service-card__icon-overlay svg { width: 48px; height: 48px; fill: var(--primary); margin-bottom: 8px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
+.service-card__icon-overlay span {
+  color: #fff; font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  opacity: 0.7;
+}
 .service-card__body { padding: 24px; }
 .service-card__title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--black); }
 .service-card__link {
