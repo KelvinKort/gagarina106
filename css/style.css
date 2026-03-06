@@ -118,13 +118,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 100%; height: auto; display: block;
   max-height: 600px; object-fit: cover; object-position: center;
 }
+/* Mid-position actions (between upper and lower text on banners) */
+.slider__actions--mid {
+  position: absolute; left: 0; top: 62%;
+  display: flex; gap: 16px; pointer-events: auto;
+}
+.btn--route-sm {
+  padding: 12px 28px; font-size: 0.9rem;
+}
 .slider__overlay {
   position: absolute; top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
 }
 .slider__overlay .container { height: 100%; position: relative; }
 .slider__actions {
-  position: absolute; left: 0; top: 62%;
   display: flex; gap: 16px; pointer-events: auto;
 }
 .btn--route {
@@ -471,7 +478,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .slider__arrow { width: 36px; height: 36px; font-size: 1rem; }
   .slider__arrow--prev { left: 8px; }
   .slider__arrow--next { right: 8px; }
-  .slider__actions { top: 58%; }
+  .slider__img { max-height: none; }
+  .slider__actions--mid {
+    top: auto; bottom: 22%; left: 50%; transform: translateX(-50%);
+    justify-content: center;
+  }
+  .btn--route-sm {
+    padding: 10px 20px; font-size: 0.8rem; letter-spacing: 0.5px;
+  }
   .btn--route { padding: 12px 20px; font-size: 0.85rem; }
   .hero-intro { padding: 32px 0; }
   .hero-intro__title { font-size: 1.3rem; }
