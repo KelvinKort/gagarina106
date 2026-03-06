@@ -55,8 +55,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .header__right { display: flex; align-items: center; gap: 24px; }
 .header__phone {
   display: flex; align-items: center; gap: 8px;
-  color: #fff; font-weight: 600; font-size: 1rem;
-  transition: color var(--transition);
+  color: #fff; font-weight: 600; font-size: 0.85rem;
+  transition: color var(--transition); white-space: nowrap;
 }
 .header__phone:hover { color: var(--primary); }
 .header__phone svg { width: 20px; height: 20px; fill: var(--primary); }
