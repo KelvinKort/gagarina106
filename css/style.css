@@ -276,6 +276,32 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .promo-banner__title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: 12px; }
 .promo-banner__desc { font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; }
 
+/* ====== REVIEWS ====== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+.review-card {
+  background: #fff; border-radius: var(--radius);
+  padding: 28px; box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 16px;
+  transition: all var(--transition);
+}
+.review-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.review-card__stars { color: #FFB800; font-size: 1.2rem; letter-spacing: 2px; }
+.review-card__text {
+  color: var(--text); font-size: 0.95rem; line-height: 1.7;
+  flex: 1;
+}
+.review-card__author {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 12px; border-top: 1px solid var(--border);
+}
+.review-card__name { font-weight: 600; font-size: 0.85rem; color: var(--text); }
+.review-card__date { font-size: 0.8rem; color: var(--gray); }
+
 /* ====== VIDEOS ====== */
 .videos-grid {
   display: grid;
