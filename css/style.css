@@ -116,9 +116,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   max-height: 600px; object-fit: cover; object-position: center;
 }
 .slider__overlay {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 24px 0 32px;
-  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: flex-start; padding-top: 32px;
 }
 .slider__actions { display: flex; justify-content: flex-start; gap: 16px; }
 .btn--route {
@@ -435,6 +434,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .slider__arrow { width: 36px; height: 36px; font-size: 1rem; }
   .slider__arrow--prev { left: 8px; }
   .slider__arrow--next { right: 8px; }
+  .slider__overlay { padding-top: 20px; }
   .btn--route { padding: 12px 20px; font-size: 0.85rem; }
   .hero-intro { padding: 32px 0; }
   .hero-intro__title { font-size: 1.3rem; }
