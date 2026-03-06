@@ -98,26 +98,78 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .desktop-nav a:hover { color: var(--primary); }
 
-/* ====== HERO ====== */
-.hero {
+/* ====== HERO SLIDER ====== */
+.slider {
   margin-top: var(--header-h);
-  background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
-  color: #fff; padding: 80px 0; position: relative; overflow: hidden;
-  min-height: 500px; display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  background: var(--black);
 }
-.hero::before {
-  content: ''; position: absolute; right: -100px; top: -100px;
-  width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,102,0,0.15) 0%, transparent 70%);
+.slider__track { position: relative; width: 100%; }
+.slider__slide {
+  display: none; position: relative; width: 100%;
+  animation: sliderFade 0.6s ease;
 }
-.hero__content { position: relative; z-index: 1; max-width: 650px; }
-.hero__subtitle {
-  color: var(--primary); font-size: 0.9rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;
+.slider__slide.active { display: block; }
+@keyframes sliderFade { from { opacity: 0; } to { opacity: 1; } }
+.slider__img {
+  width: 100%; height: auto; display: block;
+  max-height: 600px; object-fit: cover; object-position: center;
 }
-.hero__title { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
-.hero__desc { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 32px; line-height: 1.7; }
-.hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.slider__overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 0 32px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+}
+.slider__actions { display: flex; justify-content: flex-start; gap: 16px; }
+.btn--route {
+  background: var(--primary); color: #fff;
+  padding: 14px 32px; border-radius: var(--radius);
+  font-weight: 700; font-size: 1rem; text-transform: uppercase;
+  letter-spacing: 1px; display: inline-flex; align-items: center; gap: 10px;
+  transition: all var(--transition); box-shadow: 0 4px 20px rgba(255,102,0,0.4);
+}
+.btn--route:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255,102,0,0.5); }
+.btn--route svg { flex-shrink: 0; }
+
+/* Slider arrows */
+.slider__arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); color: #fff; border: none;
+  width: 48px; height: 48px; border-radius: 50%;
+  font-size: 1.2rem; cursor: pointer; z-index: 10;
+  transition: background var(--transition);
+  display: flex; align-items: center; justify-content: center;
+}
+.slider__arrow:hover { background: var(--primary); }
+.slider__arrow--prev { left: 16px; }
+.slider__arrow--next { right: 16px; }
+
+/* Slider dots */
+.slider__dots {
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 10px; z-index: 10;
+}
+.slider__dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: rgba(255,255,255,0.5); border: none; cursor: pointer;
+  transition: all var(--transition);
+}
+.slider__dot.active { background: var(--primary); transform: scale(1.2); }
+
+/* Hero intro (SEO text below slider) */
+.hero-intro {
+  background: var(--black); color: #fff;
+  padding: 48px 0; text-align: center;
+}
+.hero-intro__title {
+  font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800;
+  line-height: 1.3; margin-bottom: 16px; max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.hero-intro__desc {
+  font-size: 1.05rem; color: rgba(255,255,255,0.7);
+  margin-bottom: 28px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;
+}
+.hero-intro__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* Buttons */
 .btn {
@@ -379,7 +431,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 50px 0; min-height: auto; }
+  .slider__img { max-height: 400px; }
+  .slider__arrow { width: 36px; height: 36px; font-size: 1rem; }
+  .slider__arrow--prev { left: 8px; }
+  .slider__arrow--next { right: 8px; }
+  .btn--route { padding: 12px 20px; font-size: 0.85rem; }
+  .hero-intro { padding: 32px 0; }
+  .hero-intro__title { font-size: 1.3rem; }
   .section { padding: 50px 0; }
   .services-grid { grid-template-columns: 1fr; }
   .videos-grid { grid-template-columns: 1fr; }

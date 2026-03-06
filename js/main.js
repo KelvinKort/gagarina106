@@ -74,4 +74,73 @@
     });
   });
 
+  // ====== HERO SLIDER ======
+  const slider = document.getElementById('hero-slider');
+  if (slider) {
+    const slides = slider.querySelectorAll('.slider__slide');
+    const dotsContainer = slider.querySelector('.slider__dots');
+    const prevBtn = slider.querySelector('.slider__arrow--prev');
+    const nextBtn = slider.querySelector('.slider__arrow--next');
+    let current = 0;
+    let autoplayTimer = null;
+    const AUTOPLAY_MS = 5000;
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'slider__dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Слайд ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dotsContainer.children[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dotsContainer.children[current].classList.add('active');
+      resetAutoplay();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    if (prevBtn) prevBtn.addEventListener('click', prev);
+    if (nextBtn) nextBtn.addEventListener('click', next);
+
+    function resetAutoplay() {
+      clearInterval(autoplayTimer);
+      if (slides.length > 1) autoplayTimer = setInterval(next, AUTOPLAY_MS);
+    }
+
+    // Hide arrows/dots if only 1 slide
+    if (slides.length <= 1) {
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+      if (dotsContainer) dotsContainer.style.display = 'none';
+    } else {
+      resetAutoplay();
+    }
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+    slider.addEventListener('mouseleave', resetAutoplay);
+
+    // Swipe support for mobile
+    let touchStartX = 0;
+    slider.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+    }, { passive: true });
+
+    // Route button tracking
+    slider.querySelectorAll('.btn--route').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (typeof ym !== 'undefined') ym(46619493, 'reachGoal', 'route_click');
+      });
+    });
+  }
+
 })();

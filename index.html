@@ -83,17 +83,40 @@
   <a href="#contacts">Контакты</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero" style="background: linear-gradient(135deg, rgba(26,26,26,0.92) 0%, rgba(42,42,42,0.88) 100%), url('/img/common/hero-bg.jpg') center/cover no-repeat;">
-  <div class="container">
-    <div class="hero__content">
-      <p class="hero__subtitle">Автотехцентр в Калининграде</p>
-      <h1 class="hero__title">Весь спектр услуг по ремонту автомобиля в одном месте</h1>
-      <p class="hero__desc">Автотехцентр «ГАГАРИНА 106» — это больше чем автосервис. Легковой и коммерческий ремонт, кузовной цех, антикоррозийная обработка, карданный цех и автомойка на одной площадке.</p>
-      <div class="hero__actions">
-        <a href="tel:+74012769308" class="btn btn--primary">Позвонить</a>
-        <a href="/vse-uslugi" class="btn btn--outline">Все услуги</a>
+<!-- HERO SLIDER -->
+<section class="slider" id="hero-slider">
+  <div class="slider__track">
+    <!-- Slide 1 — Мойка самообслуживания -->
+    <div class="slider__slide active">
+      <img src="/img/slides/slide-1.jpg" alt="Мойка самообслуживания в тёплом боксе — Гагарина 106" class="slider__img">
+      <div class="slider__overlay">
+        <div class="container">
+          <div class="slider__actions">
+            <a href="https://yandex.ru/maps/?rtext=~54.693611%2C20.464722&rtt=auto" target="_blank" rel="noopener" class="btn btn--route">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21.71 11.29l-9-9a1 1 0 00-1.42 0l-9 9a1 1 0 000 1.42l9 9a1 1 0 001.42 0l9-9a1 1 0 000-1.42zM13 14h-2v-4h2v4zm0-6h-2V6h2v2z"/></svg>
+              ПРОЛОЖИТЬ МАРШРУТ
+            </a>
+          </div>
+        </div>
       </div>
+    </div>
+    <!-- Slide 2 — placeholder -->
+    <!-- Slide 3 — placeholder -->
+    <!-- Slide 4 — placeholder -->
+  </div>
+  <button class="slider__arrow slider__arrow--prev" aria-label="Предыдущий слайд">❮</button>
+  <button class="slider__arrow slider__arrow--next" aria-label="Следующий слайд">❯</button>
+  <div class="slider__dots"></div>
+</section>
+
+<!-- HERO TEXT (SEO) -->
+<section class="hero-intro">
+  <div class="container">
+    <h1 class="hero-intro__title">Автотехцентр «ГАГАРИНА 106» — весь спектр услуг по ремонту автомобиля</h1>
+    <p class="hero-intro__desc">Легковой и коммерческий ремонт, кузовной цех, антикоррозийная обработка, карданный цех и автомойка на одной площадке в Калининграде.</p>
+    <div class="hero-intro__actions">
+      <a href="tel:+74012769308" class="btn btn--primary">Позвонить</a>
+      <a href="/vse-uslugi" class="btn btn--dark">Все услуги</a>
     </div>
   </div>
 </section>
