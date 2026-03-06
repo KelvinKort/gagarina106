@@ -74,6 +74,30 @@
     });
   });
 
+  // ====== VIDEOS: показать ещё ======
+  document.querySelectorAll('.videos-grid').forEach(grid => {
+    const cards = grid.querySelectorAll('.video-card');
+    if (cards.length <= 3) return;
+    // Hide cards beyond first 3
+    cards.forEach((card, i) => { if (i >= 3) card.classList.add('hidden'); });
+    // Create toggle button
+    const wrapper = grid.parentElement;
+    const btnWrap = document.createElement('div');
+    btnWrap.style.cssText = 'text-align:center;margin-top:24px;';
+    const btn = document.createElement('button');
+    btn.className = 'btn btn--dark';
+    btn.textContent = 'Показать ещё ↓';
+    btn.addEventListener('click', () => {
+      const isHidden = cards[3].classList.contains('hidden');
+      cards.forEach((card, i) => {
+        if (i >= 3) card.classList.toggle('hidden');
+      });
+      btn.textContent = isHidden ? 'Скрыть ↑' : 'Показать ещё ↓';
+    });
+    btnWrap.appendChild(btn);
+    grid.after(btnWrap);
+  });
+
   // ====== HERO SLIDER ======
   const slider = document.getElementById('hero-slider');
   if (slider) {
