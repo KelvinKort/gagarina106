@@ -480,7 +480,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .slider__arrow--next { right: 8px; }
   .slider__img { max-height: none; }
   .slider__actions--mid {
-    top: 55%; bottom: auto; left: 50%; transform: translateX(-50%);
+    top: 83%; bottom: auto; left: 50%; transform: translateX(-50%);
     justify-content: center;
   }
   .btn--route-sm {
