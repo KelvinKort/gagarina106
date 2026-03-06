@@ -483,7 +483,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .btn--route { padding: 12px 20px; font-size: 0.85rem; }
   .hero-intro { padding: 32px 0; }
   .hero-intro__title { font-size: 1.3rem; }
-  .section { padding: 50px 0; }
+  .section { padding: 32px 0; }
+  .section--alt { padding: 24px 0; }
+  .section__header { margin-bottom: 20px; }
+  .advantages-grid { gap: 8px; grid-template-columns: 1fr 1fr; }
+  .advantage { padding: 14px 10px; }
+  .advantage__icon { width: 40px; height: 40px; margin-bottom: 8px; }
+  .advantage__icon svg { width: 18px; height: 18px; }
+  .advantage__title { font-size: 0.9rem; margin-bottom: 4px; }
+  .advantage__desc { font-size: 0.8rem; line-height: 1.4; }
   .services-grid { grid-template-columns: 1fr; }
   .videos-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
