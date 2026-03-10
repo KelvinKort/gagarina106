@@ -10,6 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    @media(max-width:768px){
+      .service-card{flex-direction:column!important}
+      .service-card>div:first-child{min-height:200px!important;flex:none!important}
+      .service-card>div:last-child{padding:20px 24px!important}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
+      .gallery-grid img{height:140px!important}
+    }
+  </style>
 </head>
 <body>
 
@@ -26,6 +35,9 @@
 <section class="content-section">
   <div class="container">
     <p>Антикоррозийная обработка автомобиля необходима для защиты металлических кузовных элементов от ржавчины, продления срока службы машины, сохранения её прочности, внешнего вида и высокой остаточной стоимости. Она создаёт защитный барьер, предотвращающий разрушительное воздействие влаги, дорожных реагентов и кислорода на металл.</p>
+    <div style="text-align:center;margin:32px 0">
+      <img src="/img/antikor/areas-diagram.jpg" alt="Области антикоррозийной обработки автомобиля" style="max-width:100%;height:auto;border-radius:12px">
+    </div>
 
     <h2>Почему выбирают нас</h2>
     <div class="stats-row">
@@ -37,52 +49,67 @@
 
     <h2>Услуги антикоррозийного цеха</h2>
 
-    <h3>Изготовление и ремонт порогов и арок</h3>
-    <p>Изготавливаем и устанавливаем пороги индивидуально для вашего автомобиля. Не важно, редкая это иномарка или отечественный автомобиль — мы подберём оптимальную конструкцию.</p>
-    <ul>
-      <li>Изготовление порогов по лекалам или образцу</li>
-      <li>Полная замена сгнивших элементов</li>
-      <li>Установка и антикоррозийная обработка</li>
-      <li>Помощь в подборе цвета и покраска</li>
-    </ul>
-    <div class="price-grid">
-      <div class="price-card"><div class="price-card__name">Изготовление порогов</div><div class="price-card__price">от 2 700 ₽</div></div>
+    <div class="service-card" style="display:flex;gap:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.07);margin-bottom:32px">
+      <div style="flex:0 0 40%;min-height:300px;background:url('/img/antikor/sills.jpg') center/cover"></div>
+      <div style="flex:1;padding:32px 36px;display:flex;flex-direction:column;justify-content:center">
+        <h3 style="margin:0 0 12px;font-size:1.4rem">Изготовление и ремонт порогов и арок</h3>
+        <p style="margin:0 0 16px;color:#555">Изготавливаем и устанавливаем пороги индивидуально для вашего автомобиля. Не важно, редкая это иномарка или отечественный автомобиль — мы подберём оптимальную конструкцию.</p>
+        <ul style="margin:0 0 16px;color:#555;padding-left:20px">
+          <li>Изготовление порогов по лекалам или образцу</li>
+          <li>Полная замена сгнивших элементов</li>
+          <li>Установка и антикоррозийная обработка</li>
+          <li>Помощь в подборе цвета и покраска</li>
+        </ul>
+        <div><span style="display:inline-block;background:#FF6600;color:#fff;padding:8px 20px;border-radius:8px;font-weight:700;font-size:1.1rem">от 2 700 ₽</span></div>
+      </div>
     </div>
 
-    <h3>Сварочные работы и кузовной ремонт</h3>
-    <ul>
-      <li>Восстановление геометрии кузова на профессиональном стапеле</li>
-      <li>Сварка и ремонт сильно повреждённых элементов: днища, арок, порогов, лонжеронов</li>
-      <li>Полная реставрация старых и ржавых авто</li>
-      <li>Устранение вмятин без покраски (PDR), рихтовка, вытягивание</li>
-      <li>Локальный и полный перекрас кузова</li>
-      <li>Изготовление деталей на листогибном оборудовании</li>
-    </ul>
-    <div class="price-grid">
-      <div class="price-card"><div class="price-card__name">Сварочные работы</div><div class="price-card__price">от 3 000 ₽</div></div>
+    <div class="service-card" style="display:flex;flex-direction:row-reverse;gap:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.07);margin-bottom:32px">
+      <div style="flex:0 0 40%;min-height:300px;background:url('/img/antikor/welding.jpg') center/cover"></div>
+      <div style="flex:1;padding:32px 36px;display:flex;flex-direction:column;justify-content:center">
+        <h3 style="margin:0 0 12px;font-size:1.4rem">Сварочные работы и кузовной ремонт</h3>
+        <ul style="margin:0 0 16px;color:#555;padding-left:20px">
+          <li>Восстановление геометрии кузова на профессиональном стапеле</li>
+          <li>Сварка и ремонт сильно повреждённых элементов: днища, арок, порогов, лонжеронов</li>
+          <li>Полная реставрация старых и ржавых авто</li>
+          <li>Устранение вмятин без покраски (PDR), рихтовка, вытягивание</li>
+          <li>Локальный и полный перекрас кузова</li>
+          <li>Изготовление деталей на листогибном оборудовании</li>
+        </ul>
+        <div><span style="display:inline-block;background:#FF6600;color:#fff;padding:8px 20px;border-radius:8px;font-weight:700;font-size:1.1rem">от 3 000 ₽</span></div>
+      </div>
     </div>
 
-    <h3>Пескоструйные работы</h3>
-    <p>Профессиональная пескоструйная обработка поверхностей любой сложности и площади. Готовим идеальную поверхность под покраску, полировку, цинкование или дальнейшую эксплуатацию. Удаляем ржавчину, окалину, старую краску до чистого металла (до степени SA 2.5).</p>
-    <p><strong>Что мы обрабатываем:</strong></p>
-    <ul>
-      <li>Автомобильная сфера: колёсные диски, кузовные детали, элементы шасси</li>
-      <li>Металлоконструкции: заборы, ворота, решётки, балки, оборудование</li>
-      <li>Личные вещи: велосипедные рамы, инструменты, садовая мебель</li>
-    </ul>
-    <div class="price-grid">
-      <div class="price-card"><div class="price-card__name">Пескоструйные работы</div><div class="price-card__price">от 5 000 ₽</div></div>
+    <div class="service-card" style="display:flex;gap:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.07);margin-bottom:32px">
+      <div style="flex:0 0 40%;min-height:300px;background:url('/img/antikor/sandblasting.jpg') center/cover"></div>
+      <div style="flex:1;padding:32px 36px;display:flex;flex-direction:column;justify-content:center">
+        <h3 style="margin:0 0 12px;font-size:1.4rem">Пескоструйные работы</h3>
+        <p style="margin:0 0 16px;color:#555">Профессиональная пескоструйная обработка поверхностей любой сложности и площади. Готовим идеальную поверхность под покраску, полировку, цинкование или дальнейшую эксплуатацию. Удаляем ржавчину, окалину, старую краску до чистого металла (до степени SA 2.5).</p>
+        <p style="margin:0 0 8px;color:#555"><strong>Что мы обрабатываем:</strong></p>
+        <ul style="margin:0 0 16px;color:#555;padding-left:20px">
+          <li>Автомобильная сфера: колёсные диски, кузовные детали, элементы шасси</li>
+          <li>Металлоконструкции: заборы, ворота, решётки, балки, оборудование</li>
+          <li>Личные вещи: велосипедные рамы, инструменты, садовая мебель</li>
+        </ul>
+        <div><span style="display:inline-block;background:#FF6600;color:#fff;padding:8px 20px;border-radius:8px;font-weight:700;font-size:1.1rem">от 5 000 ₽</span></div>
+      </div>
     </div>
 
     <h2>Антикоррозийная обработка кузова</h2>
     <h3>Продлеваем жизнь кузова автомобиля</h3>
     <p>Преимущества антикоррозийной защиты кузова очевидны. Калининградский климат с высоким уровнем влажности и обильными осадками не щадит металл. Защитить свой автомобиль может каждый, обратившись за этой услугой в автотехцентр «ГАГАРИНА 106».</p>
+    <div style="text-align:center;margin:24px 0">
+      <img src="/img/antikor/lotos-zones.jpg" alt="Зоны антикоррозийной обработки LOTOS" style="max-width:100%;height:auto;border-radius:10px">
+    </div>
 
     <h3>Факторы преждевременного износа кузова</h3>
     <p><strong>Вода, осадки, влажность</strong> — основной «враг» кузова. Вода в виде дождя, снега и повышенной влажности является катализатором окисления металла — появления коррозии.</p>
     <p><strong>Песок, гравий, камни, реагенты</strong> — всё, что применяется для чистки дорог в зимнее время. Попадание песко-соляных смесей и реагентов в микротрещины способствует динамичному развитию коррозии.</p>
 
     <h3>Материал LOTOS BODY</h3>
+    <div style="text-align:center;margin:0 0 24px">
+      <img src="/img/antikor/lotos-logo.png" alt="LOTOS" style="max-width:200px;height:auto">
+    </div>
     <p>Антикоррозионный антигравийный материал с высокими шумоизоляционными свойствами. Предназначен для защиты открытых полостей днища автомобиля. Отлично защищает от коррозии, воздействия влаги, антиобледенительных реагентов, абразивного износа.</p>
     <ul>
       <li>Можно наносить на старые антикоррозионные покрытия</li>
@@ -91,8 +118,93 @@
       <li>После высыхания не трескается и не отслаивается</li>
       <li>Вытесняет остатки влаги с поверхности</li>
     </ul>
+    <div style="text-align:center;margin:32px 0 0">
+      <img src="/img/antikor/lotos-prices.jpg" alt="Цены на антикоррозийную обработку LOTOS" style="max-width:100%;height:auto;border-radius:10px">
+    </div>
   </div>
 </section>
+
+<!-- PHOTO GALLERY SLIDER -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Фотогалерея наших работ</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div class="gallery-slider" style="position:relative;overflow:hidden;border-radius:12px">
+      <div class="gallery-slider__track" style="display:flex;transition:transform .4s ease;gap:12px">
+        <img src="/img/antikor/gallery/1.jpg" alt="Антикоррозийная обработка — фото 1" class="gallery-slide">
+        <img src="/img/antikor/gallery/2.jpg" alt="Антикоррозийная обработка — фото 2" class="gallery-slide">
+        <img src="/img/antikor/gallery/3.jpg" alt="Антикоррозийная обработка — фото 3" class="gallery-slide">
+        <img src="/img/antikor/gallery/4.jpg" alt="Антикоррозийная обработка — фото 4" class="gallery-slide">
+        <img src="/img/antikor/gallery/5.jpg" alt="Антикоррозийная обработка — фото 5" class="gallery-slide">
+        <img src="/img/antikor/gallery/6.jpg" alt="Антикоррозийная обработка — фото 6" class="gallery-slide">
+        <img src="/img/antikor/gallery/7.jpg" alt="Антикоррозийная обработка — фото 7" class="gallery-slide">
+        <img src="/img/antikor/gallery/8.jpg" alt="Антикоррозийная обработка — фото 8" class="gallery-slide">
+        <img src="/img/antikor/gallery/9.jpg" alt="Антикоррозийная обработка — фото 9" class="gallery-slide">
+        <img src="/img/antikor/gallery/10.jpg" alt="Антикоррозийная обработка — фото 10" class="gallery-slide">
+        <img src="/img/antikor/gallery/11.jpg" alt="Антикоррозийная обработка — фото 11" class="gallery-slide">
+        <img src="/img/antikor/gallery/12.jpg" alt="Антикоррозийная обработка — фото 12" class="gallery-slide">
+        <img src="/img/antikor/gallery/13.jpg" alt="Антикоррозийная обработка — фото 13" class="gallery-slide">
+      </div>
+      <button class="gallery-btn gallery-btn--prev" aria-label="Назад">‹</button>
+      <button class="gallery-btn gallery-btn--next" aria-label="Вперёд">›</button>
+      <div class="gallery-dots"></div>
+    </div>
+  </div>
+</section>
+<style>
+  .gallery-slide{flex:0 0 calc(33.333% - 8px);height:280px;object-fit:cover;border-radius:10px;cursor:pointer}
+  .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:28px;border-radius:50%;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .gallery-btn:hover{background:rgba(0,0,0,.8)}
+  .gallery-btn--prev{left:12px}
+  .gallery-btn--next{right:12px}
+  .gallery-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+  .gallery-dots span{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,.2);cursor:pointer;transition:background .2s}
+  .gallery-dots span.active{background:#FF6600}
+  @media(max-width:768px){
+    .gallery-slide{flex:0 0 calc(50% - 6px)!important;height:180px!important}
+  }
+</style>
+<script>
+(function(){
+  var track=document.querySelector('.gallery-slider__track');
+  var slides=document.querySelectorAll('.gallery-slide');
+  var dotsWrap=document.querySelector('.gallery-dots');
+  var prevBtn=document.querySelector('.gallery-btn--prev');
+  var nextBtn=document.querySelector('.gallery-btn--next');
+  var idx=0;
+  function perView(){return window.innerWidth<=768?2:3}
+  function maxIdx(){return Math.max(0,slides.length-perView())}
+  function buildDots(){
+    dotsWrap.innerHTML='';
+    var pages=Math.ceil(slides.length/perView());
+    for(var i=0;i<pages;i++){var d=document.createElement('span');d.dataset.i=i;dotsWrap.appendChild(d)}
+    updateDots()
+  }
+  function updateDots(){
+    var page=Math.floor(idx/perView());
+    dotsWrap.querySelectorAll('span').forEach(function(d,i){d.classList.toggle('active',i===page)})
+  }
+  function go(i){
+    idx=Math.max(0,Math.min(i,maxIdx()));
+    var gap=12;
+    var slideW=(track.parentElement.offsetWidth-(perView()-1)*gap)/perView();
+    track.style.transform='translateX(-'+(idx*(slideW+gap))+'px)';
+    updateDots()
+  }
+  prevBtn.onclick=function(){go(idx-perView())};
+  nextBtn.onclick=function(){go(idx+perView())};
+  dotsWrap.onclick=function(e){if(e.target.dataset.i!==undefined)go(parseInt(e.target.dataset.i)*perView())};
+  // Touch swipe
+  var sx,dx;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dx=0},{passive:true});
+  track.addEventListener('touchmove',function(e){dx=e.touches[0].clientX-sx},{passive:true});
+  track.addEventListener('touchend',function(){if(Math.abs(dx)>40){dx<0?go(idx+1):go(idx-1)}});
+  buildDots();
+  window.addEventListener('resize',function(){buildDots();go(idx)});
+})();
+</script>
 
 <section class="section">
   <div class="container">
