@@ -474,6 +474,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 768px) {
+  /* Global mobile padding */
+  .container { padding: 0 16px; }
+  body { overflow-x: hidden; }
+  .content-section { padding-left: 0; padding-right: 0; }
+  .content-section .container { padding: 0 16px; }
+  .content-section .container img { max-width: 100%; height: auto; }
+  .content-section .container ul,
+  .content-section .container ol { padding-left: 24px; }
+
   .slider__img { max-height: 400px; }
   .slider__arrow { width: 36px; height: 36px; font-size: 1rem; }
   .slider__arrow--prev { left: 8px; }
@@ -498,6 +507,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer__bottom { flex-direction: column; text-align: center; }
   .stats-row { grid-template-columns: 1fr 1fr; }
   .steps { flex-direction: column; }
+
+  /* Service cards mobile padding */
+  .service-card { margin-left: 0; margin-right: 0; }
+  .page-hero { padding-left: 0; padding-right: 0; }
+  .promo-banner { padding-left: 0; padding-right: 0; }
+  .promo-banner .container { padding: 0 16px; }
 }
 
 @media (max-width: 480px) {
