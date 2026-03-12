@@ -71,11 +71,12 @@
       align-items: flex-end;
       justify-content: center;
       margin-bottom: 6px;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
     }
-    .car-3d svg {
+    .car-3d img {
       height: 100%;
       width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
     }
     .car-label {
       font-size: clamp(10px, 1.8vw, 14px);
@@ -184,134 +185,25 @@
       <div class="cars-row">
         <!-- Micro -->
         <div class="car-col">
-          <div class="car-3d">
-            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="body1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#555"/>
-                  <stop offset="50%" stop-color="#333"/>
-                  <stop offset="100%" stop-color="#1a1a1a"/>
-                </linearGradient>
-                <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#b8d4e8"/>
-                  <stop offset="100%" stop-color="#7ab0d4"/>
-                </linearGradient>
-                <linearGradient id="wheel" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#444"/>
-                  <stop offset="100%" stop-color="#111"/>
-                </linearGradient>
-                <radialGradient id="hub">
-                  <stop offset="0%" stop-color="#ccc"/>
-                  <stop offset="100%" stop-color="#888"/>
-                </radialGradient>
-              </defs>
-              <!-- Body -->
-              <path d="M30,65 L30,55 Q30,48 40,44 L55,32 Q62,26 75,26 L125,26 Q135,26 140,32 L158,46 Q170,48 172,55 L172,65 Q172,70 168,70 L34,70 Q30,70 30,65Z" fill="url(#body1)" stroke="#111" stroke-width="1"/>
-              <!-- Glass -->
-              <path d="M62,44 L72,30 Q75,27 82,27 L100,27 L100,44Z" fill="url(#glass)" opacity="0.9"/>
-              <path d="M105,27 L128,27 Q133,27 136,30 L152,44 L105,44Z" fill="url(#glass)" opacity="0.9"/>
-              <!-- Headlights -->
-              <ellipse cx="170" cy="56" rx="4" ry="6" fill="#FFE066" opacity="0.8"/>
-              <ellipse cx="32" cy="58" rx="3" ry="5" fill="#FF4444" opacity="0.6"/>
-              <!-- Wheels -->
-              <circle cx="60" cy="72" r="14" fill="url(#wheel)"/>
-              <circle cx="60" cy="72" r="8" fill="url(#hub)"/>
-              <circle cx="60" cy="72" r="3" fill="#555"/>
-              <circle cx="148" cy="72" r="14" fill="url(#wheel)"/>
-              <circle cx="148" cy="72" r="8" fill="url(#hub)"/>
-              <circle cx="148" cy="72" r="3" fill="#555"/>
-              <!-- Reflection -->
-              <path d="M35,55 L168,55" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-            </svg>
-          </div>
+          <div class="car-3d"><img src="../img/antikor/car-micro.png" alt="Микро-класс"></div>
           <div class="car-label">микро-класс</div>
         </div>
 
         <!-- Sedan -->
         <div class="car-col">
-          <div class="car-3d">
-            <svg viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="body2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#666"/>
-                  <stop offset="40%" stop-color="#444"/>
-                  <stop offset="100%" stop-color="#222"/>
-                </linearGradient>
-              </defs>
-              <path d="M20,65 L20,54 Q20,46 34,42 L52,28 Q60,22 75,22 L145,22 Q158,22 164,28 L185,44 Q200,46 200,54 L200,65 Q200,70 196,70 L24,70 Q20,70 20,65Z" fill="url(#body2)" stroke="#111" stroke-width="1"/>
-              <path d="M56,42 L68,26 Q72,23 78,23 L108,23 L108,42Z" fill="url(#glass)" opacity="0.9"/>
-              <path d="M113,23 L148,23 Q155,23 160,28 L180,42 L113,42Z" fill="url(#glass)" opacity="0.9"/>
-              <ellipse cx="198" cy="55" rx="4" ry="6" fill="#FFE066" opacity="0.8"/>
-              <ellipse cx="22" cy="57" rx="3" ry="5" fill="#FF4444" opacity="0.6"/>
-              <circle cx="55" cy="72" r="15" fill="url(#wheel)"/>
-              <circle cx="55" cy="72" r="9" fill="url(#hub)"/>
-              <circle cx="55" cy="72" r="3" fill="#555"/>
-              <circle cx="170" cy="72" r="15" fill="url(#wheel)"/>
-              <circle cx="170" cy="72" r="9" fill="url(#hub)"/>
-              <circle cx="170" cy="72" r="3" fill="#555"/>
-              <path d="M25,54 L196,54" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
-            </svg>
-          </div>
+          <div class="car-3d"><img src="../img/antikor/car-sedan.png" alt="Легковая"></div>
           <div class="car-label">легковая</div>
         </div>
 
         <!-- Crossover -->
         <div class="car-col">
-          <div class="car-3d">
-            <svg viewBox="0 0 230 110" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="body3" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#555"/>
-                  <stop offset="40%" stop-color="#3a3a3a"/>
-                  <stop offset="100%" stop-color="#1a1a1a"/>
-                </linearGradient>
-              </defs>
-              <path d="M18,72 L18,58 Q18,48 30,44 L42,26 Q50,16 68,16 L162,16 Q176,16 182,26 L198,46 Q212,48 212,58 L212,72 Q212,78 208,78 L22,78 Q18,78 18,72Z" fill="url(#body3)" stroke="#111" stroke-width="1"/>
-              <path d="M46,44 L58,22 Q62,17 70,17 L112,17 L112,44Z" fill="url(#glass)" opacity="0.9"/>
-              <path d="M118,17 L164,17 Q172,17 177,22 L196,44 L118,44Z" fill="url(#glass)" opacity="0.9"/>
-              <rect x="18" y="72" width="194" height="5" rx="2" fill="#222"/>
-              <ellipse cx="210" cy="60" rx="5" ry="7" fill="#FFE066" opacity="0.8"/>
-              <ellipse cx="20" cy="62" rx="4" ry="6" fill="#FF4444" opacity="0.6"/>
-              <circle cx="55" cy="80" r="17" fill="url(#wheel)"/>
-              <circle cx="55" cy="80" r="10" fill="url(#hub)"/>
-              <circle cx="55" cy="80" r="4" fill="#555"/>
-              <circle cx="178" cy="80" r="17" fill="url(#wheel)"/>
-              <circle cx="178" cy="80" r="10" fill="url(#hub)"/>
-              <circle cx="178" cy="80" r="4" fill="#555"/>
-              <path d="M22,58 L208,58" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
-            </svg>
-          </div>
+          <div class="car-3d"><img src="../img/antikor/car-crossover.png" alt="Кроссовер"></div>
           <div class="car-label">кроссовер / минивэн</div>
         </div>
 
         <!-- SUV -->
         <div class="car-col">
-          <div class="car-3d">
-            <svg viewBox="0 0 240 115" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="body4" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#4a4a4a"/>
-                  <stop offset="35%" stop-color="#333"/>
-                  <stop offset="100%" stop-color="#111"/>
-                </linearGradient>
-              </defs>
-              <path d="M15,74 L15,58 Q15,48 28,44 L38,22 Q45,12 62,12 L178,12 Q192,12 198,22 L210,46 Q224,48 224,58 L224,74 Q224,80 220,80 L18,80 Q15,80 15,74Z" fill="url(#body4)" stroke="#111" stroke-width="1"/>
-              <path d="M42,44 L52,18 Q56,13 64,13 L118,13 L118,44Z" fill="url(#glass)" opacity="0.85"/>
-              <path d="M124,13 L180,13 Q188,13 193,18 L208,44 L124,44Z" fill="url(#glass)" opacity="0.85"/>
-              <line x1="118" y1="13" x2="118" y2="44" stroke="#222" stroke-width="2"/>
-              <rect x="15" y="74" width="209" height="6" rx="2" fill="#222"/>
-              <rect x="30" y="44" width="180" height="3" rx="1" fill="#333"/>
-              <ellipse cx="222" cy="60" rx="5" ry="8" fill="#FFE066" opacity="0.8"/>
-              <ellipse cx="17" cy="62" rx="4" ry="7" fill="#FF4444" opacity="0.6"/>
-              <circle cx="55" cy="83" r="18" fill="url(#wheel)"/>
-              <circle cx="55" cy="83" r="11" fill="url(#hub)"/>
-              <circle cx="55" cy="83" r="4" fill="#555"/>
-              <circle cx="184" cy="83" r="18" fill="url(#wheel)"/>
-              <circle cx="184" cy="83" r="11" fill="url(#hub)"/>
-              <circle cx="184" cy="83" r="4" fill="#555"/>
-              <path d="M20,58 L220,58" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
-            </svg>
-          </div>
+          <div class="car-3d"><img src="../img/antikor/car-suv.png" alt="Джип"></div>
           <div class="car-label">джип</div>
         </div>
       </div>
