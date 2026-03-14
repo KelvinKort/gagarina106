@@ -23,6 +23,64 @@
   </div>
 </section>
 
+<!-- PHOTO GALLERY SLIDER -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Фотогалерея</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div class="gallery-slider" style="position:relative;overflow:hidden;border-radius:12px">
+      <div class="gallery-slider__track" style="display:flex;transition:transform .4s ease;gap:12px">
+        <img src="../img/kuzovnoy/gallery/1.jpg" alt="Кузовной цех — фото 1" class="gallery-slide">
+        <img src="../img/kuzovnoy/gallery/2.jpg" alt="Кузовной цех — фото 2" class="gallery-slide">
+        <img src="../img/kuzovnoy/gallery/3.jpg" alt="Кузовной цех — фото 3" class="gallery-slide">
+        <img src="../img/kuzovnoy/gallery/4.jpg" alt="Кузовной цех — фото 4" class="gallery-slide">
+        <img src="../img/kuzovnoy/gallery/5.jpg" alt="Кузовной цех — фото 5" class="gallery-slide">
+        <img src="../img/kuzovnoy/gallery/6.jpg" alt="Кузовной цех — фото 6" class="gallery-slide">
+        <img src="../img/kuzovnoy/gallery/7.jpg" alt="Кузовной цех — фото 7" class="gallery-slide">
+      </div>
+      <button class="gallery-btn gallery-btn--prev" aria-label="Назад">‹</button>
+      <button class="gallery-btn gallery-btn--next" aria-label="Вперёд">›</button>
+      <div class="gallery-dots"></div>
+    </div>
+  </div>
+</section>
+<style>
+  .gallery-slide{flex:0 0 calc(33.333% - 8px);height:280px;object-fit:cover;border-radius:10px;cursor:pointer}
+  .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:28px;border-radius:50%;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .gallery-btn:hover{background:rgba(0,0,0,.8)}
+  .gallery-btn--prev{left:12px}
+  .gallery-btn--next{right:12px}
+  .gallery-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+  .gallery-dots span{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,.2);cursor:pointer;transition:background .2s}
+  .gallery-dots span.active{background:#FF6600}
+  @media(max-width:768px){.gallery-slide{flex:0 0 calc(50% - 6px)!important;height:180px!important}}
+</style>
+<script>
+(function(){
+  var track=document.querySelector('.gallery-slider__track');
+  var slides=document.querySelectorAll('.gallery-slide');
+  var dotsWrap=document.querySelector('.gallery-dots');
+  var prevBtn=document.querySelector('.gallery-btn--prev');
+  var nextBtn=document.querySelector('.gallery-btn--next');
+  var idx=0;
+  function perView(){return window.innerWidth<=768?2:3}
+  function maxIdx(){return Math.max(0,slides.length-perView())}
+  function buildDots(){dotsWrap.innerHTML='';var pages=Math.ceil(slides.length/perView());for(var i=0;i<pages;i++){var d=document.createElement('span');d.dataset.i=i;dotsWrap.appendChild(d)}updateDots()}
+  function updateDots(){var page=Math.floor(idx/perView());dotsWrap.querySelectorAll('span').forEach(function(d,i){d.classList.toggle('active',i===page)})}
+  function go(i){idx=Math.max(0,Math.min(i,maxIdx()));var gap=12;var slideW=(track.parentElement.offsetWidth-(perView()-1)*gap)/perView();track.style.transform='translateX(-'+(idx*(slideW+gap))+'px)';updateDots()}
+  prevBtn.onclick=function(){go(idx-perView())};
+  nextBtn.onclick=function(){go(idx+perView())};
+  dotsWrap.onclick=function(e){if(e.target.dataset.i!==undefined)go(parseInt(e.target.dataset.i)*perView())};
+  var sx,dx;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dx=0},{passive:true});
+  track.addEventListener('touchmove',function(e){dx=e.touches[0].clientX-sx},{passive:true});
+  track.addEventListener('touchend',function(){if(Math.abs(dx)>40){dx<0?go(idx+1):go(idx-1)}});
+  buildDots();window.addEventListener('resize',function(){buildDots();go(idx)});
+})();
+</script>
+
 <section class="content-section">
   <div class="container">
     <div class="stats-row">
