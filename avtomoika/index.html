@@ -10,6 +10,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .service-block{display:flex;gap:0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.07);margin-bottom:16px}
+    .service-block__img{flex:0 0 40%;min-height:220px;background-size:cover;background-position:center}
+    .service-block__text{flex:1;padding:24px 28px;display:flex;flex-direction:column;justify-content:center}
+    .service-block__text h3{margin:0 0 8px;font-size:1.3rem}
+    .service-block__text p{margin:0;color:#555;line-height:1.6}
+    .service-block:nth-child(even){flex-direction:row-reverse}
+    @media(max-width:768px){
+      .service-block,.service-block:nth-child(even){flex-direction:column!important}
+      .service-block__img{min-height:180px!important;flex:none!important}
+      .service-block__text{padding:16px!important}
+      .gallery-slide{flex:0 0 100%!important;height:250px!important;border-radius:8px!important}
+    }
+  </style>
 </head>
 <body>
 
@@ -23,19 +37,64 @@
   </div>
 </section>
 
+<!-- Фотогалерея слайдер -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Фотогалерея</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div class="gallery-slider" style="position:relative;overflow:hidden;border-radius:12px">
+      <div class="gallery-slider__track" style="display:flex;transition:transform .4s ease;gap:12px">
+        <img src="../img/avtomoika/services/moika.jpg" alt="Бесконтактная мойка" class="gallery-slide">
+        <img src="../img/avtomoika/services/himchistka.jpg" alt="Химчистка салона" class="gallery-slide">
+        <img src="../img/avtomoika/services/dnishe.jpg" alt="Мойка днища на подъёмнике" class="gallery-slide">
+        <img src="../img/avtomoika/services/akvablasting.jpg" alt="Аквабластинг" class="gallery-slide">
+        <img src="../img/avtomoika/services/samoobsluzhivanie.jpg" alt="Мойка самообслуживания" class="gallery-slide">
+        <img src="../img/avtomoika/services/polirovka.jpg" alt="Полировка кузова" class="gallery-slide">
+      </div>
+      <button class="gallery-btn gallery-btn--prev" aria-label="Назад">‹</button>
+      <button class="gallery-btn gallery-btn--next" aria-label="Вперёд">›</button>
+      <div class="gallery-dots"></div>
+    </div>
+  </div>
+</section>
+<style>
+  .gallery-slide{flex:0 0 calc(33.333% - 8px);height:280px;object-fit:cover;border-radius:10px;cursor:pointer}
+  .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:28px;border-radius:50%;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .gallery-btn:hover{background:rgba(0,0,0,.8)}
+  .gallery-btn--prev{left:12px}
+  .gallery-btn--next{right:12px}
+  .gallery-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+  .gallery-dots span{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,.2);cursor:pointer;transition:background .2s}
+  .gallery-dots span.active{background:#FF6600}
+</style>
+<script>
+(function(){
+  var track=document.querySelector('.gallery-slider__track');
+  var slides=document.querySelectorAll('.gallery-slide');
+  var dotsWrap=document.querySelector('.gallery-dots');
+  var prevBtn=document.querySelector('.gallery-btn--prev');
+  var nextBtn=document.querySelector('.gallery-btn--next');
+  var idx=0;
+  function perView(){return window.innerWidth<=768?1:3}
+  function maxIdx(){return Math.max(0,slides.length-perView())}
+  function buildDots(){dotsWrap.innerHTML='';var pages=Math.ceil(slides.length/perView());for(var i=0;i<pages;i++){var d=document.createElement('span');d.dataset.i=i;dotsWrap.appendChild(d)}updateDots()}
+  function updateDots(){var page=Math.floor(idx/perView());dotsWrap.querySelectorAll('span').forEach(function(d,i){d.classList.toggle('active',i===page)})}
+  function go(i){idx=Math.max(0,Math.min(i,maxIdx()));var gap=12;var slideW=(track.parentElement.offsetWidth-(perView()-1)*gap)/perView();track.style.transform='translateX(-'+(idx*(slideW+gap))+'px)';updateDots()}
+  prevBtn.onclick=function(){go(idx-perView())};
+  nextBtn.onclick=function(){go(idx+perView())};
+  dotsWrap.onclick=function(e){if(e.target.dataset.i!==undefined)go(parseInt(e.target.dataset.i)*perView())};
+  var sx,dx;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dx=0},{passive:true});
+  track.addEventListener('touchmove',function(e){dx=e.touches[0].clientX-sx},{passive:true});
+  track.addEventListener('touchend',function(){if(Math.abs(dx)>40){dx<0?go(idx+1):go(idx-1)}});
+  buildDots();window.addEventListener('resize',function(){buildDots();go(idx)});
+})();
+</script>
+
 <section class="content-section">
   <div class="container">
-    <div class="service-list-grid">
-      <div class="service-list-item">Бесконтактная мойка</div>
-      <div class="service-list-item">Химчистка и полировка</div>
-      <div class="service-list-item">Мойка днища на подъёмнике</div>
-      <div class="service-list-item">Мойка самообслуживания</div>
-      <div class="service-list-item">Аквабластинг</div>
-      <div class="service-list-item">Автомагазин</div>
-      <div class="service-list-item">Кафе и зона ожидания</div>
-    </div>
-
-    <h2>Наши преимущества</h2>
     <div class="stats-row">
       <div class="stat"><span class="stat__number">4</span><span class="stat__label">моечных бокса</span></div>
       <div class="stat"><span class="stat__number">2</span><span class="stat__label">бокса мойки самообслуживания</span></div>
@@ -44,29 +103,131 @@
 
     <h2>Услуги автомойки</h2>
 
-    <h3>Мойка автомобиля</h3>
-    <p>Весь спектр услуг автомоечного комплекса. Предоставляем услуги по предварительной записи и в порядке живой очереди.</p>
+    <div class="service-block">
+      <div class="service-block__img" style="background-image:url('../img/avtomoika/services/moika.jpg')"></div>
+      <div class="service-block__text">
+        <h3>Мойка автомобиля</h3>
+        <p>Весь спектр услуг автомоечного комплекса. Предоставляем услуги по предварительной записи и в порядке живой очереди.</p>
+      </div>
+    </div>
 
-    <h3>Химчистка</h3>
-    <p>Осуществляем химчистку салонов автомобилей. Используем только качественную автохимию и эффективные способы чистки. Устраним все загрязнения и вдохнём новую жизнь в салон вашего автомобиля.</p>
+    <div class="service-block">
+      <div class="service-block__img" style="background-image:url('../img/avtomoika/services/himchistka.jpg')"></div>
+      <div class="service-block__text">
+        <h3>Химчистка</h3>
+        <p>Осуществляем химчистку салонов автомобилей. Используем только качественную автохимию и эффективные способы чистки. Устраним все загрязнения и вдохнём новую жизнь в салон вашего автомобиля.</p>
+      </div>
+    </div>
 
-    <h3>Мойка днища и подвески</h3>
-    <p>Профессиональная мойка днища и подвески автомобиля на подъёмнике. Опытные специалисты бережно приведут в порядок ваш автомобиль.</p>
+    <div class="service-block">
+      <div class="service-block__img" style="background-image:url('../img/avtomoika/services/dnishe.jpg')"></div>
+      <div class="service-block__text">
+        <h3>Мойка днища и подвески</h3>
+        <p>Профессиональная мойка днища и подвески автомобиля на подъёмнике. Опытные специалисты бережно приведут в порядок ваш автомобиль.</p>
+      </div>
+    </div>
 
-    <h3>Аквабластинг</h3>
-    <p>Бережная чистка от грязи, ржавчины и коррозии без повреждения металла. Идеально подходит для очистки авто/мото деталей, сохраняя их геометрию.</p>
+    <div class="service-block">
+      <div class="service-block__img" style="background-image:url('../img/avtomoika/services/akvablasting.jpg')"></div>
+      <div class="service-block__text">
+        <h3>Аквабластинг</h3>
+        <p>Бережная чистка от грязи, ржавчины и коррозии без повреждения металла. Идеально подходит для очистки авто/мото деталей, сохраняя их геометрию.</p>
+      </div>
+    </div>
 
-    <h3>Мойка самообслуживания</h3>
-    <p>2 современных бокса для самостоятельной мойки автомобиля в комфортных условиях.</p>
+    <div class="service-block">
+      <div class="service-block__img" style="background-image:url('../img/avtomoika/services/samoobsluzhivanie.jpg')"></div>
+      <div class="service-block__text">
+        <h3>Мойка самообслуживания</h3>
+        <p>2 современных бокса для самостоятельной мойки автомобиля в комфортных условиях.</p>
+      </div>
+    </div>
 
-    <h3>Полировка</h3>
-    <p>Качественная полировка кузова вашего автомобиля. Без голограмм, без следов полироли и съеденной краски. Только идеальный результат за кратчайшие сроки.</p>
+    <div class="service-block">
+      <div class="service-block__img" style="background-image:url('../img/avtomoika/services/polirovka.jpg')"></div>
+      <div class="service-block__text">
+        <h3>Полировка</h3>
+        <p>Качественная полировка кузова вашего автомобиля. Без голограмм, без следов полироли и съеденной краски. Только идеальный результат за кратчайшие сроки.</p>
+      </div>
+    </div>
 
     <h2>Как мы работаем</h2>
     <p>Рано или поздно салон любого автомобиля приходит в состояние, когда уборка подручными средствами не достигает желаемого эффекта: пятна на тканевой обивке, въевшаяся грязь, скопление пыли в труднодоступных местах. Для того чтобы вернуть салону новизну, а вам ощущение чистоты и свежести — воспользуйтесь услугой «химчистка» нашего автомоечного комплекса. Результат вас удивит.</p>
   </div>
 </section>
 
+<!-- Отзывы -->
+<section class="section section--alt" id="reviews">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Отзывы клиентов</h2>
+      <p class="section__subtitle">Рейтинг <strong>4,3</strong> на Яндекс.Картах · 262 оценки</p>
+      <div class="section__divider"></div>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Ребята молодцы, сделали невозможное, очень рада, что есть профессионалы своего дела, низкий поклон и благодарность!</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 12 уровня</span>
+          <span class="review-card__date">февраль 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Профи есть профи. Очередь стоит к тем, у кого есть все, качественно и без обмана.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 6 уровня</span>
+          <span class="review-card__date">январь 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Хорошие специалисты. Постоянно обслуживаю там машину. Рекомендую. Цены приемлемые. Главное не приходится переделывать.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 12 уровня</span>
+          <span class="review-card__date">декабрь 2023</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Всё отлично, очень быстро, время заняло всего полчаса с момента ожидания, я доволен. Оцениваю приём и работу на пять.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 7 уровня</span>
+          <span class="review-card__date">сентябрь 2023</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Отличный автокомплекс. Всё есть — от мойки до кузовного цеха, электрики, антикоррозийка, магазины запчастей, техосмотр. Одно из самых насыщенных мест по услугам.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 5 уровня</span>
+          <span class="review-card__date">февраль 2023</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Быстро, качественно, адекватно по цене.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 4 уровня</span>
+          <span class="review-card__date">июль 2025</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top: 20px;">
+      <a href="https://yandex.ru/maps/org/gagarina_106/1035638582/reviews/" target="_blank" rel="noopener" class="btn btn--dark">Все отзывы на Яндекс.Картах →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Видео (только релевантные мойке) -->
 <section class="section">
   <div class="container">
     <div class="section__header">
@@ -86,26 +247,6 @@
         <iframe src="https://rutube.ru/play/embed/e678907c2117c5dd86c599319e060801/" loading="lazy" allowfullscreen title="Полировка авто"></iframe>
         <div class="video-card__title">Полировка авто</div>
       </div>
-      <div class="video-card">
-        <iframe src="https://rutube.ru/play/embed/7719c757ada2c3d8616b2aa41b5c7eed/" loading="lazy" allowfullscreen title="Сварка авто"></iframe>
-        <div class="video-card__title">Сварка авто</div>
-      </div>
-      <div class="video-card">
-        <iframe src="https://rutube.ru/play/embed/4064d432d03fb6428d0078ce2e4cf3bc/" loading="lazy" allowfullscreen title="Развал-схождение"></iframe>
-        <div class="video-card__title">Развал-схождение</div>
-      </div>
-      <div class="video-card">
-        <iframe src="https://rutube.ru/play/embed/9f5570219e19e40a60322ddcab5ddc0e/" loading="lazy" allowfullscreen title="Пескоструйная обработка авто"></iframe>
-        <div class="video-card__title">Пескоструйная обработка авто</div>
-      </div>
-      <div class="video-card">
-        <iframe src="https://rutube.ru/play/embed/7291649aeb53f6e56dacba0fcee01b8c/" loading="lazy" allowfullscreen title="Антикоррозийная обработка авто"></iframe>
-        <div class="video-card__title">Антикоррозийная обработка авто</div>
-      </div>
-      <div class="video-card">
-        <iframe src="https://rutube.ru/play/embed/643ec40f27a7d80ba4e67e22d9a1af72/" loading="lazy" allowfullscreen title="Ремонт коммерческого транспорта"></iframe>
-        <div class="video-card__title">Ремонт коммерческого транспорта</div>
-      </div>
     </div>
   </div>
 </section>
@@ -118,7 +259,7 @@
   </div>
 </section>
 
-<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer__brand"><div class="footer__logo"><img src="../img/common/logo.png" alt="Гагарина 106" class="footer__logo-img"><span>Гагарина 106</span></div><p class="footer__desc">Автотехцентр в Калининграде.</p></div><div><h4 class="footer__heading">Услуги</h4><div class="footer__links"><a href="../legkovoy">Легковой автосервис</a><a href="../remkomtrans">РемКомТранс</a><a href="../kuzovnoy">Кузовной цех</a><a href="../kardani">Карданный цех</a><a href="../antikor">Антикор</a><a href="../avtomoika">Автомойка</a></div></div><div><h4 class="footer__heading">Контакты</h4><div class="footer__links"><a href="tel:+74012775566">+7 (4012) 77-55-66</a><a href="mailto:gagarina106@bk.ru">gagarina106@bk.ru</a><span>ул. Ю. Гагарина, 106, Калининград</span></div></div></div><div class="footer__bottom"><span>© 2017–2026 «ГАГАРИНА 106»</span><span>Калининград</span></div></div></footer>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer__brand"><div class="footer__logo"><img src="../img/common/logo.png" alt="Гагарина 106" class="footer__logo-img"><span>Гагарина 106</span></div><p class="footer__desc">Автотехцентр в Калининграде.</p></div><div><h4 class="footer__heading">Услуги</h4><div class="footer__links"><a href="../legkovoy">Легковой автосервис</a><a href="../remkomtrans">РемКомТранс</a><a href="../kuzovnoy">Кузовной цех</a><a href="../kardani">Карданный цех</a><a href="../antikor">Антикор</a><a href="../avtomoika">Автомойка</a></div></div><div><h4 class="footer__heading">Контакты</h4><div class="footer__links"><a href="tel:+74012775566">+7 (4012) 77-55-66</a><a href="mailto:gagarina106@bk.ru">gagarina106@bk.ru</a><span>ул. Ю. Гагарина, 106, Калининград</span></div></div></div><div class="footer__bottom"><span>© 1995–2026 «ГАГАРИНА 106»</span><span>Калининград</span></div></div></footer>
 <script src="../js/main.js" defer></script>
 <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(46619493,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
 </body>
