@@ -170,12 +170,68 @@
   </div>
 </section>
 
-<!-- Отзывы -->
+<!-- Рейтинг + Удобства + Отзывы + Карта -->
 <section class="section section--alt" id="reviews">
   <div class="container">
+
+    <!-- Рейтинг -->
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:3.5rem;font-weight:800;color:#FF6600;line-height:1">4.7</div>
+      <div style="color:#FFB800;font-size:1.6rem;letter-spacing:3px;margin:8px 0">★★★★★</div>
+      <div style="color:#666;font-size:1rem">212 оценок · 80 отзывов на <a href="https://yandex.ru/maps/org/avtomoyka_gagarina_106/1712543312/" target="_blank" rel="noopener" style="color:#FF6600;text-decoration:underline">Яндекс.Картах</a></div>
+    </div>
+
+    <!-- Удобства -->
+    <div class="section__header" style="margin-top:24px">
+      <h2 class="section__title">Удобства</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🅿️</span><span style="font-size:.9rem;font-weight:500">Парковка</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">📶</span><span style="font-size:.9rem;font-weight:500">Wi-Fi</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">☕</span><span style="font-size:.9rem;font-weight:500">Кафе и зона ожидания</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🚻</span><span style="font-size:.9rem;font-weight:500">Туалет</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">♿</span><span style="font-size:.9rem;font-weight:500">Доступная среда</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">📋</span><span style="font-size:.9rem;font-weight:500">Запись заранее</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">💳</span><span style="font-size:.9rem;font-weight:500">Карта, QR, наличные</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🐾</span><span style="font-size:.9rem;font-weight:500">С животными можно</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🏷️</span><span style="font-size:.9rem;font-weight:500">Акции и скидки</span>
+      </div>
+    </div>
+
+    <!-- Режим работы -->
+    <div class="section__header">
+      <h2 class="section__title">Режим работы</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div style="max-width:400px;margin:0 auto 24px">
+      <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+        <tr style="border-bottom:1px solid #eee"><td style="padding:8px 0;font-weight:600">Пн — Пт</td><td style="padding:8px 0;text-align:right;color:#333">09:00 — 21:00</td></tr>
+        <tr style="border-bottom:1px solid #eee"><td style="padding:8px 0;font-weight:600">Суббота</td><td style="padding:8px 0;text-align:right;color:#333">09:00 — 21:00</td></tr>
+        <tr><td style="padding:8px 0;font-weight:600">Воскресенье</td><td style="padding:8px 0;text-align:right;color:#333">09:00 — 21:00</td></tr>
+      </table>
+    </div>
+
+    <!-- Отзывы -->
     <div class="section__header">
       <h2 class="section__title">Отзывы клиентов</h2>
-      <p class="section__subtitle">Автомойка Гагарина 106 на Яндекс.Картах · 80 отзывов</p>
       <div class="section__divider"></div>
     </div>
     <div class="reviews-grid">
@@ -200,7 +256,7 @@
 
       <div class="review-card">
         <div class="review-card__stars">★★★★★</div>
-        <p class="review-card__text">Отличная мойка на Гагарина, из-за этого здесь бывают очереди. Записывайтесь заранее или будьте готовы подождать в живой очереди — оно того стоит! Моют, протирают и пылесосят за небольшую плату. Рекомендую.</p>
+        <p class="review-card__text">Отличная мойка на Гагарина, из-за этого здесь бывают очереди. Записывайтесь заранее или будьте готовы подождать — оно того стоит! Моют, протирают и пылесосят за небольшую плату. Рекомендую.</p>
         <div class="review-card__author">
           <span class="review-card__name">Знаток города · 20 уровня</span>
           <span class="review-card__date">июль 2024</span>
@@ -238,6 +294,12 @@
     <div style="text-align:center; margin-top: 20px;">
       <a href="https://yandex.ru/maps/org/avtomoyka_gagarina_106/1712543312/reviews/" target="_blank" rel="noopener" class="btn btn--dark">Все отзывы на Яндекс.Картах →</a>
     </div>
+
+    <!-- Карта -->
+    <div style="margin-top:24px;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.1)">
+      <iframe src="https://yandex.ru/map-widget/v1/?ll=20.464722%2C54.693611&z=16&l=map&pt=20.464722%2C54.693611%2Cpm2rdl" loading="lazy" style="width:100%;height:350px;border:none;display:block" title="Автомойка Гагарина 106 на карте"></iframe>
+    </div>
+
   </div>
 </section>
 
