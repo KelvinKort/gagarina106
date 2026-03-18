@@ -197,19 +197,71 @@
 })();
 </script>
 
-<!-- REVIEWS -->
+<!-- Рейтинг + Удобства + Отзывы + Карта -->
 <section class="section section--alt" id="reviews">
   <div class="container">
+
+    <!-- Рейтинг -->
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:3.5rem;font-weight:800;color:#FF6600;line-height:1">5.0</div>
+      <div style="color:#FFB800;font-size:1.6rem;letter-spacing:3px;margin:8px 0">★★★★★</div>
+      <div style="color:#666;font-size:1rem">9 отзывов на <a href="https://yandex.ru/maps/org/antikor/107803767453/reviews/" target="_blank" rel="noopener" style="color:#FF6600;text-decoration:underline">Яндекс.Картах</a></div>
+    </div>
+
+    <!-- Удобства -->
+    <div class="section__header" style="margin-top:24px">
+      <h2 class="section__title">Удобства</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🅿️</span><span style="font-size:.9rem;font-weight:500">Парковка</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">📶</span><span style="font-size:.9rem;font-weight:500">Wi-Fi</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🚻</span><span style="font-size:.9rem;font-weight:500">Туалет</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">♿</span><span style="font-size:.9rem;font-weight:500">Доступная среда</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">💳</span><span style="font-size:.9rem;font-weight:500">SMS, наличные, QR</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🐾</span><span style="font-size:.9rem;font-weight:500">С животными можно</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🔧</span><span style="font-size:.9rem;font-weight:500">Кузовной ремонт</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🚗</span><span style="font-size:.9rem;font-weight:500">Любые марки авто</span>
+      </div>
+    </div>
+
+    <!-- Режим работы -->
+    <div class="section__header">
+      <h2 class="section__title">Режим работы</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div style="max-width:400px;margin:0 auto 24px">
+      <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+        <tr style="border-bottom:1px solid #eee"><td style="padding:8px 0;font-weight:600">Пн — Сб</td><td style="padding:8px 0;text-align:right;color:#333">08:00 — 21:00</td></tr>
+        <tr><td style="padding:8px 0;font-weight:600">Воскресенье</td><td style="padding:8px 0;text-align:right;color:#333">08:00 — 21:00</td></tr>
+      </table>
+    </div>
+
+    <!-- Отзывы -->
     <div class="section__header">
       <h2 class="section__title">Отзывы клиентов</h2>
-      <p class="section__subtitle">Рейтинг <strong>5,0</strong> на Яндекс.Картах · <a href="https://yandex.ru/maps/org/antikor/107803767453/reviews/" target="_blank" rel="noopener" style="color:var(--primary)">Антикор на Гагарина 106</a></p>
       <div class="section__divider"></div>
     </div>
     <div class="reviews-grid">
 
       <div class="review-card">
         <div class="review-card__stars">★★★★★</div>
-        <p class="review-card__text">Обращался по поводу антикоррозийной обработки. Приятно удивлен уровнем сервиса. Подробно все объяснили, показали варианты материалов. Машину приняли в срок, выполнили все аккуратно. Сделали даже немного больше, чем договаривались по мелким очагам ржавчины. Авто как новое. Цены соответствуют качеству.</p>
+        <p class="review-card__text">Обращался по поводу антикоррозийной обработки. Приятно удивлен уровнем сервиса. Подробно все объяснили, показали варианты материалов. Машину приняли в срок, выполнили все аккуратно. Сделали даже немного больше, чем договаривались. Авто как новое.</p>
         <div class="review-card__author">
           <span class="review-card__name">Знаток города · 5 уровня</span>
           <span class="review-card__date">декабрь 2025</span>
@@ -218,7 +270,7 @@
 
       <div class="review-card">
         <div class="review-card__stars">★★★★★</div>
-        <p class="review-card__text">Все четко и по делу, перед обработкой обнаружили что требуется вмешательство сварщика, тут же все сделали. Выполнили раньше оговоренных сроков, что для меня было крайне важно. Спасибо, буду обращаться!</p>
+        <p class="review-card__text">Все четко и по делу, перед обработкой обнаружили что требуется вмешательство сварщика, тут же все сделали. Выполнили раньше оговоренных сроков. Спасибо, буду обращаться!</p>
         <div class="review-card__author">
           <span class="review-card__name">Знаток города · 5 уровня</span>
           <span class="review-card__date">декабрь 2025</span>
@@ -262,9 +314,15 @@
       </div>
 
     </div>
-    <div style="text-align:center; margin-top: 32px;">
+    <div style="text-align:center; margin-top: 20px;">
       <a href="https://yandex.ru/maps/org/antikor/107803767453/reviews/" target="_blank" rel="noopener" class="btn btn--dark">Все отзывы на Яндекс.Картах →</a>
     </div>
+
+    <!-- Карта -->
+    <div style="margin-top:24px;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.1)">
+      <iframe src="https://yandex.ru/map-widget/v1/?ll=20.463900%2C54.693300&z=17&l=map&mode=search&oid=107803767453" loading="lazy" style="width:100%;height:350px;border:none;display:block" title="Антикор Гагарина 106 на карте"></iframe>
+    </div>
+
   </div>
 </section>
 
