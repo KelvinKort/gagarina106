@@ -67,6 +67,21 @@
   style.textContent = '.visible { opacity: 1 !important; transform: translateY(0) !important; }';
   document.head.appendChild(style);
 
+  // Phone dropdown
+  const phoneDropdown = document.querySelector('.phone-dropdown');
+  if (phoneDropdown) {
+    const btn = phoneDropdown.querySelector('.phone-dropdown__btn');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      phoneDropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!phoneDropdown.contains(e.target)) {
+        phoneDropdown.classList.remove('open');
+      }
+    });
+  }
+
   // Phone link click tracking (Yandex Metrika)
   document.querySelectorAll('a[href^="tel:"]').forEach(a => {
     a.addEventListener('click', () => {
