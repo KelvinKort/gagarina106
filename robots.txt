@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.gagarina106.ru/sitemap.xml
 
-Host: www.gagarina106.ru
+Sitemap: https://gagarina106.ru/sitemap.xml

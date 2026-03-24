@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.gagarina106.ru/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.gagarina106.ru/legkovoy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.gagarina106.ru/remkomtrans</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.gagarina106.ru/kuzovnoy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.gagarina106.ru/kardani</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.gagarina106.ru/antikor</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.gagarina106.ru/avtomoika</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.gagarina106.ru/vse-uslugi</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gagarina106.ru/</loc></url>
+  <url><loc>https://gagarina106.ru/legkovoy</loc></url>
+  <url><loc>https://gagarina106.ru/remkomtrans</loc></url>
+  <url><loc>https://gagarina106.ru/kuzovnoy</loc></url>
+  <url><loc>https://gagarina106.ru/kardani</loc></url>
+  <url><loc>https://gagarina106.ru/antikor</loc></url>
+  <url><loc>https://gagarina106.ru/avtomoika</loc></url>
 </urlset>
