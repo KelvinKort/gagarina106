@@ -59,6 +59,13 @@
   @media(max-width:768px){
     .gallery-slide{flex:0 0 100%!important;height:250px!important;border-radius:8px!important}
   }
+  @media(max-width:768px){
+    .remkomtrans-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    .remkomtrans-services-grid .service-card__icon{height:170px}
+    .remkomtrans-services-grid .service-card__body{padding:16px}
+    .remkomtrans-services-grid .service-card__title{font-size:1rem}
+    .remkomtrans-services-grid .service-card__body p{font-size:.9rem;line-height:1.5}
+  }
 </style>
 <script>
 (function(){
@@ -166,7 +173,7 @@
       <h2 class="section__title">Направления ремонта</h2>
       <div class="section__divider"></div>
     </div>
-    <div class="services-grid">
+    <div class="services-grid remkomtrans-services-grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
       <div class="service-card">
         <div class="service-card__icon">
           <img src="../img/remkomtrans/services/minibus.jpg" alt="Ремонт микроавтобусов всех марок и моделей" class="card-photo">
