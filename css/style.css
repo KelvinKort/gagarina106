@@ -533,7 +533,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer-grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }
   .stats-row { grid-template-columns: 1fr 1fr; }
-  .steps { flex-direction: column; }
+  .steps { flex-direction: column; gap: 10px; }
+  .step { padding: 14px 16px; min-width: 0; }
+  .step__number { width: 34px; height: 34px; margin: 0 auto 10px; font-size: 1rem; }
+  .step__title { font-size: 0.92rem; line-height: 1.45; }
 
   /* Service cards mobile padding */
   .service-card { margin-left: 0; margin-right: 0; }
