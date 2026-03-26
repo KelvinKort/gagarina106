@@ -150,6 +150,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .slider__slide.active { display: block; }
 @keyframes sliderFade { from { opacity: 0; } to { opacity: 1; } }
+.slider__link { display: block; width: 100%; height: 100%; }
 .slider__img {
   width: 100%; height: auto; display: block;
   max-height: 600px; object-fit: cover; object-position: center;
