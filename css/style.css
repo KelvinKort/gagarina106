@@ -399,6 +399,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: background var(--transition);
 }
 .footer__social a:hover { background: var(--primary); }
+.footer__social-icon { width: 24px; height: 24px; display: block; object-fit: contain; }
 .footer__social svg { width: 18px; height: 18px; fill: #fff; }
 .footer__heading { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 20px; }
 .footer__links { display: flex; flex-direction: column; gap: 10px; }
