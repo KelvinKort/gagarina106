@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автотехцентр "ГАГАРИНА 106" | Калининград — Все виды ремонта автомобилей</title>
+  <meta name="description" content="Автотехцентр ГАГАРИНА 106 в Калининграде — полный спектр услуг по ремонту автомобилей: автосервис, кузовной ремонт, антикор, карданы, мойка. ул. Гагарина, 106.">
+  <meta name="keywords" content="автосервис Калининград, ремонт авто, кузовной ремонт, антикор, карданные валы, автомойка, ГАГАРИНА 106">
+  <link rel="canonical" href="https://gagarina106.ru/">
+  <meta property="og:title" content="Автотехцентр ГАГАРИНА 106 | Калининград">
+  <meta property="og:description" content="Полный спектр услуг по ремонту автомобилей в одном месте. Калининград, ул. Гагарина, 106.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gagarina106.ru/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .section__title--uppercase { text-transform: uppercase; }
+
+    .tenants-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--gap);
+      align-items: stretch;
+    }
+
+    .tenant-card {
+      min-height: 210px;
+      padding: 22px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .tenant-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(255,102,0,0.35);
+    }
+
+    .tenant-card__title {
+      color: var(--black);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .tenant-card p {
+      color: var(--text-light);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .burger {
+        position: fixed;
+        top: 18px;
+        right: 16px;
+        z-index: 1002;
+      }
+
+      .tenants-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .phone-dropdown { display: none; }
+      .tenants-grid { grid-template-columns: 1fr; }
+      .tenant-card { min-height: 0; padding: 18px; }
+      .tenant-card__title { font-size: 0.98rem; }
+      .tenant-card p { font-size: 0.9rem; }
+    }
+
+    @media (max-width: 480px) {
+      .header .container { padding: 0 12px; }
+      .header__logo-img { height: 40px; }
+      .header__right { gap: 0; }
+      .burger {
+        gap: 4px;
+        padding: 4px;
+      }
+      .burger span { width: 22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Автотехцентр ГАГАРИНА 106",
+    "image": "https://gagarina106.ru/img/logo.svg",
+    "url": "https://gagarina106.ru",
+    "telephone": "+74012769308",
+    "email": "gagarina106@bk.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Калининград, ул. Гагарина, 106",
+      "addressLocality": "Калининград",
+      "postalCode": "236038",
+      "addressCountry": "RU"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
+    ],
+    "sameAs": ["https://vk.com/gagarina_106", "https://rutube.ru/channel/70800758/", "https://dzen.ru/gagarina106_kld"]
+  }
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <a href="./" class="header__logo">
+      <img src="img/common/logo.png" alt="Логотип Гагарина 106" class="header__logo-img">
+    </a>
+    <nav class="desktop-nav">
+      <a href="legkovoy">Автосервис</a>
+      <a href="remkomtrans">РемКомТранс</a>
+      <a href="kuzovnoy">Кузовной цех</a>
+      <a href="kardani">Карданы</a>
+      <a href="antikor">Антикор</a>
+      <a href="avtomoika">Автомойка</a>
+      <a href="pravila-i-oferta">Правила и оферта</a>
+    </nav>
+    <div class="header__right">
+      <div class="phone-dropdown">
+        <button class="phone-dropdown__btn">Позвонить</button>
+        <div class="phone-dropdown__menu">
+          <a href="tel:+74012769308" class="phone-dropdown__item">
+            <span class="phone-dropdown__label">Автосервис</span>
+            <span class="phone-dropdown__number">+7 (4012) 76-93-08</span>
+          </a>
+          <a href="tel:+74012770770" class="phone-dropdown__item">
+            <span class="phone-dropdown__label">РемКомТранс</span>
+            <span class="phone-dropdown__number">+7 (4012) 77-07-70</span>
+          </a>
+          <a href="tel:+74012755754" class="phone-dropdown__item">
+            <span class="phone-dropdown__label">Кузовной цех</span>
+            <span class="phone-dropdown__number">+7 (4012) 75-57-54</span>
+          </a>
+          <a href="tel:+74012762772" class="phone-dropdown__item">
+            <span class="phone-dropdown__label">Карданный цех</span>
+            <span class="phone-dropdown__number">+7 (4012) 76-27-72</span>
+          </a>
+          <a href="tel:+79114775106" class="phone-dropdown__item">
+            <span class="phone-dropdown__label">Антикор</span>
+            <span class="phone-dropdown__number">+7 911 477-51-06</span>
+          </a>
+          <a href="tel:+79814775566" class="phone-dropdown__item">
+            <span class="phone-dropdown__label">Автомойка</span>
+            <span class="phone-dropdown__number">+7 981 477-55-66</span>
+          </a>
+        </div>
+      </div>
+      <button class="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav">
+  <a href="./">Главная</a>
+  <a href="legkovoy">Автосервис</a>
+  <a href="remkomtrans">РемКомТранс</a>
+  <a href="kuzovnoy">Кузовной цех</a>
+  <a href="kardani">Карданы</a>
+  <a href="antikor">Антикор</a>
+  <a href="avtomoika">Автомойка</a>
+  <a href="pravila-i-oferta">Правила и оферта</a>
+  <a href="#contacts">Контакты</a>
+  <a href="tel:+74012769308">Позвонить</a>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="slider" id="hero-slider">
+  <div class="slider__track">
+    <div class="slider__slide active">
+      <a href="antikor" class="slider__link" aria-label="Перейти на страницу Антикор">
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/slides/slide-1-mob.jpg?v=2">
+          <img src="img/slides/slide-1.jpg?v=2" alt="Антикоррозийная обработка автомобиля в ГАГАРИНА 106" class="slider__img">
+        </picture>
+      </a>
+    </div>
+    <div class="slider__slide">
+      <a href="legkovoy" class="slider__link" aria-label="Перейти на страницу Автосервис">
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/slides/slide-2-mob.jpg?v=2">
+          <img src="img/slides/slide-2.jpg?v=2" alt="Диагностика подвески на вибростенде в ГАГАРИНА 106" class="slider__img">
+        </picture>
+      </a>
+    </div>
+    <div class="slider__slide">
+      <a href="kuzovnoy" class="slider__link" aria-label="Перейти на страницу Кузовной цех">
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/slides/slide-3-mob.jpg?v=2">
+          <img src="img/slides/slide-3.jpg?v=2" alt="Покраска автомобиля в камере в ГАГАРИНА 106" class="slider__img">
+        </picture>
+      </a>
+    </div>
+    <div class="slider__slide">
+      <a href="avtomoika" class="slider__link" aria-label="Перейти на страницу Автомойка">
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/slides/slide-4-mob.jpg?v=2">
+          <img src="img/slides/slide-4.jpg?v=2" alt="Автомойка, детейлинг и бокс самообслуживания в ГАГАРИНА 106" class="slider__img">
+        </picture>
+      </a>
+    </div>
+    <div class="slider__slide">
+      <a href="legkovoy" class="slider__link" aria-label="Перейти на страницу Автосервис">
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/slides/slide-5-mob.jpg?v=2">
+          <img src="img/slides/slide-5.jpg?v=2" alt="3D развал-схождение в ГАГАРИНА 106" class="slider__img">
+        </picture>
+      </a>
+    </div>
+    <div class="slider__slide">
+      <a href="remkomtrans" class="slider__link" aria-label="Перейти на страницу РемКомТранс">
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/slides/slide-6-mob.jpg?v=2">
+          <img src="img/slides/slide-6.jpg?v=2" alt="Ремонт коммерческого транспорта без разгрузки в ГАГАРИНА 106" class="slider__img">
+        </picture>
+      </a>
+    </div>
+  </div>
+  <button class="slider__arrow slider__arrow--prev" aria-label="Предыдущий слайд">❮</button>
+  <button class="slider__arrow slider__arrow--next" aria-label="Следующий слайд">❯</button>
+  <div class="slider__dots"></div>
+</section>
+
+<!-- HERO TEXT (SEO) -->
+<section class="hero-intro">
+  <div class="container">
+    <h1 class="hero-intro__title">ГАГАРИНА 106</h1>
+    <p class="hero-intro__desc">Уважаемые автовладельцы, более 30 лет на территории «ГАГАРИНА 106» осуществляется профессиональный ремонт и обслуживание автомобильного транспорта и спецтехники.</p>
+    <div class="hero-intro__actions">
+      <a href="tel:+74012769308" class="btn btn--primary">Позвонить</a>
+    </div>
+  </div>
+</section>
+
+<!-- TENANTS -->
+<section class="section" id="tenants">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title section__title--uppercase">НАШИ АРЕНДАТОРЫ</h2>
+      <p class="section__subtitle">Компании и специалисты, работающие на территории автотехцентра</p>
+      <div class="section__divider"></div>
+    </div>
+    <div class="tenants-grid">
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ООО Автостартер</h3>
+        <p>Ремонт и техническое обслуживание стартеров и генераторов легковых и грузовых автомобилей.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ООО «НАМИ»</h3>
+        <p>Оформление виз и страховых полисов, заполнение анкет, подача и получение комплектов документов.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Лозовик В.Е., ИП Брижак В.В. «СТОП»</h3>
+        <p>Диагностика, обслуживание и ремонт Renault, Peugeot, Citroen: ходовая часть, двигатели, выхлопная система, автоэлектрика и замена технических жидкостей.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Жученко С.Б.</h3>
+        <p>Оптовая и розничная торговля лакокрасочными материалами: краски, эмали, лаки, грунты, клеи и расходные материалы для покрасочных работ.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Гейман Е.А.</h3>
+        <p>Инструменты для абразивной обработки, крепеж, фурнитура, нержавеющий металлопрокат, металлические и неметаллические конструкции.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Трофимук В.Н.</h3>
+        <p>Техническое обслуживание и ремонт грузовых, легковых автомобилей и микроавтобусов, сход-развал, диагностика и ремонт двигателей, автоэлектрика, автозапчасти.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Егоров М.А. «Трип Рент»</h3>
+        <p>Аренда автомобилей для путешествий по Калининградской области.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Поставной И.А.</h3>
+        <p>Мойка автотранспортных средств, включая днище, круглосуточная мойка самообслуживания, полировка и антикоррозийная обработка автомобилей с устранением глубокой коррозии металла.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Шерер А.С.</h3>
+        <p>Бронирование стёкол и пленкой, полировка, ремонт фар и шумоизоляция.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">Carlux 39</h3>
+        <p>Удаление и ремонт вмятин любой сложности без покраски.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Родичкин Д.Г. «Авто Китай»</h3>
+        <p>Деятельность легкового такси и арендованных автомобилей, торговля автомобильными деталями, узлами и принадлежностями. Запчасти для китайских автомобилей.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Яновский С.А. «ДТП39»</h3>
+        <p>Оформление ДТП с выездом на место, первичная консультация, документы для ГИБДД, консультация юриста, взыскание ущерба, независимая экспертиза, доставка автомобиля и кузовной ремонт.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Сёмин А.И.</h3>
+        <p>Кузовной ремонт, восстановление геометрии автомобиля, вытяжка и ремонт на стапеле, ремонт после ДТП, покраска автомобилей и деталей в профессиональной камере.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Фомин Д.Л.</h3>
+        <p>Техническое обслуживание и ремонт автомобилей, изготовление карданных валов, диагностика и ремонт деталей двигателей на современном оборудовании.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">ИП Островская Ю.А. «Аварком39»</h3>
+        <p>Оперативный выезд на место ДТП, независимая экспертиза, подготовка документов для ГИБДД, страховой компании и суда.</p>
+      </div>
+      <div class="tenant-card">
+        <h3 class="tenant-card__title">Шинный Двор</h3>
+        <p>Шиномонтаж, балансировка, ремонт шин и дисков, хранение шин, продажа колесных дисков, шин и аккумуляторов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="promo-banner">
+  <div class="container">
+    <h3 class="promo-banner__title">Диагностика ходовой части — бесплатно!</h3>
+    <p class="promo-banner__desc">Запишитесь по телефону и получите бесплатную диагностику подвески вашего автомобиля.</p>
+    <a href="tel:+74012769308" class="btn btn--outline">Записаться: +7 (4012) 76-93-08</a>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Преимущества обслуживания</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div class="advantages-grid">
+      <div class="advantage">
+        <div class="advantage__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        </div>
+        <h3 class="advantage__title">Гарантия и безопасность</h3>
+        <p class="advantage__desc">Гарантия на выполненные работы. Территория с охраной и видеонаблюдением.</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage__icon">
+          <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        </div>
+        <h3 class="advantage__title">Опыт с 1995 года</h3>
+        <p class="advantage__desc">Годы работы, тысячи довольных клиентов и проверенная репутация в Калининграде.</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage__icon">
+          <svg viewBox="0 0 24 24"><path d="M19.14 12.94A7 7 0 0012.06 5H12a7 7 0 00-7 7c0 3.87 3.13 7 7 7a6.98 6.98 0 004.94-2.06l-1.42-1.42A5 5 0 0112 17c-2.76 0-5-2.24-5-5s2.24-5 5-5a4.98 4.98 0 014.95 4.5H14l4 4 4-4h-2.86zM12 14a2 2 0 100-4 2 2 0 000 4z"/></svg>
+        </div>
+        <h3 class="advantage__title">Качество и надёжность</h3>
+        <p class="advantage__desc">Профессиональное оборудование, качественные запчасти и материалы.</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <h3 class="advantage__title">Всё в одном месте</h3>
+        <p class="advantage__desc">Легковой ремонт, коммерческий транспорт, кузовной цех, антикор, мойка — на одной территории.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Рейтинг + Удобства + Режим работы + Отзывы -->
+<section class="section" id="reviews">
+  <div class="container">
+
+    <!-- Рейтинг -->
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:3.5rem;font-weight:800;color:#FF6600;line-height:1">4.3</div>
+      <div style="color:#FFB800;font-size:1.6rem;letter-spacing:3px;margin:8px 0">★★★★☆</div>
+      <div style="color:#666;font-size:1rem">262 оценки · 72 отзыва на <a href="https://yandex.ru/maps/org/gagarina_106/1035638582/" target="_blank" rel="noopener" style="color:#FF6600;text-decoration:underline">Яндекс.Картах</a></div>
+    </div>
+
+    <!-- Удобства -->
+    <div class="section__header" style="margin-top:24px">
+      <h2 class="section__title">Удобства</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px">
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-alt);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🅿️</span><span style="font-size:.9rem;font-weight:500">Парковка</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-alt);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🚗</span><span style="font-size:.9rem;font-weight:500">Легковые и грузовые</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-alt);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">✨</span><span style="font-size:.9rem;font-weight:500">Полировка</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-alt);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🧹</span><span style="font-size:.9rem;font-weight:500">Химчистка</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-alt);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🚿</span><span style="font-size:.9rem;font-weight:500">Мойка: бесконтактная, ручная, днища</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--bg-alt);border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+        <span style="font-size:1.4rem">🔧</span><span style="font-size:.9rem;font-weight:500">Спецтехника</span>
+      </div>
+    </div>
+
+    <!-- Режим работы -->
+    <div class="section__header">
+      <h2 class="section__title">Режим работы</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div style="max-width:400px;margin:0 auto 24px">
+      <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+        <tr style="border-bottom:1px solid #eee"><td style="padding:8px 0;font-weight:600">Пн — Пт</td><td style="padding:8px 0;text-align:right;color:#333">09:00 — 18:00</td></tr>
+        <tr style="border-bottom:1px solid #eee"><td style="padding:8px 0;font-weight:600">Суббота</td><td style="padding:8px 0;text-align:right;color:#333">09:00 — 14:00</td></tr>
+        <tr><td style="padding:8px 0;font-weight:600">Воскресенье</td><td style="padding:8px 0;text-align:right;color:#999">выходной</td></tr>
+      </table>
+    </div>
+
+    <!-- Отзывы -->
+    <div class="section__header">
+      <h2 class="section__title">Отзывы клиентов</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Давно обслуживаю автомобили на данном автосервисе, никогда не было никаких нареканий. Обслуживаю только у одного мастера Ивана. Парень прямолинейный, лишнего не навязывает и всегда объясняет, когда можно поездить, а когда не стоит.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 7 уровня</span>
+          <span class="review-card__date">ноябрь 2025</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Давно связан деловыми отношениями с сервисом. Вполне достойный. По ценам все честно. По работе нареканий нет. Чиню там авто уже 6 лет. Мастера толковые, аккуратные.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 20 уровня</span>
+          <span class="review-card__date">ноябрь 2024</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Ребята молодцы, сделали невозможное, очень рада, что есть профессионалы своего дела, низкий поклон и благодарность!</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 12 уровня</span>
+          <span class="review-card__date">февраль 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Профи есть профи. Очередь стоит к тем, у кого есть все, качественно и без обмана.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 6 уровня</span>
+          <span class="review-card__date">январь 2026</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Быстро, качественно, адекватно по цене.</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 16 уровня</span>
+          <span class="review-card__date">июль 2025</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">Постоянный коллектив и профессиональные сотрудники!</p>
+        <div class="review-card__author">
+          <span class="review-card__name">Знаток города · 18 уровня</span>
+          <span class="review-card__date">ноябрь 2024</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top: 20px;">
+      <a href="https://yandex.ru/maps/org/gagarina_106/1035638582/reviews/" target="_blank" rel="noopener" class="btn btn--dark">Все отзывы на Яндекс.Картах →</a>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="section section--alt" id="video">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Видео из наших цехов</h2>
+      <p class="section__subtitle">Смотрите, как мы работаем</p>
+      <div class="section__divider"></div>
+    </div>
+    <div class="videos-grid">
+      <div class="video-card">
+        <iframe src="https://rutube.ru/play/embed/7719c757ada2c3d8616b2aa41b5c7eed/" loading="lazy" allowfullscreen title="Сварка авто"></iframe>
+        <div class="video-card__title">Сварка авто</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://rutube.ru/play/embed/e678907c2117c5dd86c599319e060801/" loading="lazy" allowfullscreen title="Полировка авто"></iframe>
+        <div class="video-card__title">Полировка авто</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://rutube.ru/play/embed/4064d432d03fb6428d0078ce2e4cf3bc/" loading="lazy" allowfullscreen title="Развал-схождение"></iframe>
+        <div class="video-card__title">Развал-схождение</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://rutube.ru/play/embed/95618e308a4ca0d7061ea23f9e08d39b/" loading="lazy" allowfullscreen title="Мойка днища авто"></iframe>
+        <div class="video-card__title">Мойка днища авто</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://rutube.ru/play/embed/9186a386e2314e10952b247e5285932c/" loading="lazy" allowfullscreen title="Мойка самообслуживания в тёплом боксе"></iframe>
+        <div class="video-card__title">Мойка самообслуживания в тёплом боксе</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://rutube.ru/play/embed/9f5570219e19e40a60322ddcab5ddc0e/" loading="lazy" allowfullscreen title="Пескоструйная обработка авто"></iframe>
+        <div class="video-card__title">Пескоструйная обработка авто</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://rutube.ru/play/embed/7291649aeb53f6e56dacba0fcee01b8c/" loading="lazy" allowfullscreen title="Антикоррозийная обработка авто"></iframe>
+        <div class="video-card__title">Антикоррозийная обработка авто</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://rutube.ru/play/embed/643ec40f27a7d80ba4e67e22d9a1af72/" loading="lazy" allowfullscreen title="Ремонт коммерческого транспорта"></iframe>
+        <div class="video-card__title">Ремонт коммерческого транспорта</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 32px;">
+      <a href="https://rutube.ru/channel/70800758/" target="_blank" rel="noopener" class="btn btn--dark">Все видео на Rutube →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section section--alt" id="contacts">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Контакты</h2>
+      <div class="section__divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item__icon">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item__label">Телефон</div>
+            <div class="contact-item__value"><a href="tel:+74012769308">+7 (4012) 76-93-08</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item__icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item__label">Email</div>
+            <div class="contact-item__value"><a href="mailto:gagarina106@bk.ru">gagarina106@bk.ru</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item__icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item__label">Адрес</div>
+            <div class="contact-item__value">236038, Калининград, Калининград, ул. Гагарина, 106</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item__icon">
+            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item__label">Режим работы</div>
+            <div class="contact-item__value">Пн-Пт 9:00–18:00 · Сб 9:00–14:00</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=20.463900%2C54.693300&z=17&l=map&mode=search&oid=1035638582" loading="lazy" title="Карта — Автотехцентр Гагарина 106, Калининград, ул. Гагарина, 106"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="img/common/logo.png" alt="Гагарина 106" class="footer__logo-img">
+          <span>Гагарина 106</span>
+        </div>
+        <p class="footer__desc">Автотехцентр в Калининграде. Полный спектр услуг по ремонту и обслуживанию автомобилей с 1995 года.</p>
+        <div class="footer__social">
+          <a href="https://vk.com/gagarina_106" target="_blank" rel="noopener" aria-label="ВКонтакте">
+            <img src="img/social/vk.png" alt="ВКонтакте" class="footer__social-icon">
+          </a>
+          <a href="https://rutube.ru/channel/70800758/" target="_blank" rel="noopener" aria-label="Rutube">
+            <img src="img/social/rutube.png" alt="Rutube" class="footer__social-icon">
+          </a>
+          <a href="https://dzen.ru/gagarina106_kld" target="_blank" rel="noopener" aria-label="Дзен">
+            <img src="img/social/dzen.png" alt="Дзен" class="footer__social-icon">
+          </a>
+        </div>
+        <a href="pravila-i-oferta/" class="footer__legal-btn">Правила и оферта</a>
+      </div>
+      <div>
+        <h4 class="footer__heading">Услуги</h4>
+        <div class="footer__links">
+          <a href="legkovoy">Легковой автосервис</a>
+          <a href="remkomtrans">РемКомТранс</a>
+          <a href="kuzovnoy">Кузовной цех</a>
+          <a href="kardani">Карданный цех</a>
+          <a href="antikor">Антикоррозийная обработка</a>
+          <a href="avtomoika">Автомойка</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__heading">Контакты</h4>
+        <div class="footer__links">
+          <a href="tel:+74012769308">+7 (4012) 76-93-08</a>
+          <a href="mailto:gagarina106@bk.ru">gagarina106@bk.ru</a>
+          <span>Калининград, ул. Гагарина, 106</span>
+          <span>Калининград, 236038</span>
+          <span>Пн-Пт 9:00–18:00</span>
+          <span>Сб 9:00–14:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>1995-2026 правообладатель ООО "ГАГАРИНА 106"</span>
+      <span><a href="https://instagram.com/pavel.pokrovskiy" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Разработал PAVELPOKROVSKIY</a></span>
+      <span>Калининград</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+
+<!-- Yandex.Metrika -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(46619493,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/46619493" style="position:absolute;left:-9999px" alt=""></div></noscript>
+
+</body>
+</html>
