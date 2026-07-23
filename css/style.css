@@ -298,6 +298,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.93rem;
   line-height: 1.6;
 }
+.tenant-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  transition: background var(--transition), transform var(--transition);
+}
+.tenant-card:hover .tenant-card__link,
+.tenant-card:focus-visible .tenant-card__link {
+  background: var(--primary-dark);
+  transform: translateX(2px);
+}
 
 /* ====== SERVICES GRID ====== */
 .services-grid {
