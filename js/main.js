@@ -55,7 +55,7 @@
     });
   }, observerOpts);
 
-  document.querySelectorAll('.service-card, .advantage, .stat, .step, .video-card, .price-card, .service-list-item').forEach(el => {
+  document.querySelectorAll('.tenant-card, .service-card, .advantage, .stat, .step, .video-card, .price-card, .service-list-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';

@@ -217,7 +217,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .hero-intro__desc {
   font-size: 1.05rem; color: rgba(255,255,255,0.7);
-  margin-bottom: 28px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;
+  margin-bottom: 0; max-width: 760px; margin-left: auto; margin-right: auto; line-height: 1.7;
+}
+.hero-intro__lead {
+  display: block;
+  color: #fff;
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  text-wrap: balance;
 }
 .hero-intro__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
@@ -244,11 +253,49 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: var(--black);
   margin-bottom: 8px;
 }
+.section__title--uppercase { text-transform: uppercase; }
 .section--dark .section__title { color: #fff; }
 .section__subtitle { color: var(--text-light); font-size: 1.05rem; }
 .section__divider {
   width: 60px; height: 3px; background: var(--primary);
   margin: 8px auto 0; border-radius: 2px;
+}
+
+/* ====== TENANTS GRID ====== */
+.tenants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  align-items: stretch;
+}
+.tenant-card {
+  min-height: 210px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.tenant-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(255,102,0,0.35);
+}
+.tenant-card__title {
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+.tenant-card p {
+  color: var(--text-light);
+  font-size: 0.93rem;
+  line-height: 1.6;
 }
 
 /* ====== SERVICES GRID ====== */
@@ -496,8 +543,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 1024px) {
   .desktop-nav { display: none; }
-  .burger { display: flex; }
+  .burger {
+    display: flex;
+    position: fixed;
+    top: 18px;
+    right: 16px;
+    z-index: 1002;
+  }
   .header__cta { display: none; }
+  .tenants-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -597,6 +651,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   /* Global mobile padding */
   .container { padding: 0 16px; }
   body { overflow-x: hidden; }
+  .phone-dropdown { display: none; }
   .content-section { padding-left: 0; padding-right: 0; }
   .content-section .container { padding: 0 16px; }
   .content-section .container img { max-width: 100%; height: auto; }
@@ -612,6 +667,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .btn--route { padding: 12px 20px; font-size: 0.85rem; }
   .hero-intro { padding: var(--gap) 0; }
   .hero-intro__title { font-size: 1.3rem; }
+  .hero-intro__lead { font-size: 1.08rem; }
   .section { padding: var(--gap) 0; }
   .section--alt { padding: var(--gap) 0; }
   .section__header { margin-bottom: var(--gap); }
@@ -621,6 +677,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .advantage__icon svg { width: 18px; height: 18px; }
   .advantage__title { font-size: 0.9rem; margin-bottom: 4px; }
   .advantage__desc { font-size: 0.8rem; line-height: 1.4; }
+  .tenants-grid { grid-template-columns: 1fr; }
+  .tenant-card { min-height: 0; padding: 18px; }
+  .tenant-card__title { font-size: 0.98rem; }
+  .tenant-card p { font-size: 0.9rem; }
   .services-grid { grid-template-columns: 1fr; }
   .videos-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
@@ -639,6 +699,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 480px) {
+  .header .container { padding: 0 12px; }
+  .header__logo-img { height: 40px; }
+  .header__right { gap: 0; }
+  .phone-dropdown { display: none; }
+  .burger {
+    gap: 4px;
+    padding: 4px;
+  }
+  .burger span {
+    width: 22px;
+  }
   .hero__actions { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
   .stats-row { grid-template-columns: 1fr; }
