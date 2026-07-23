@@ -282,6 +282,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: var(--shadow-hover);
   border-color: rgba(255,102,0,0.35);
 }
+.tenant-card:focus-visible {
+  outline: 3px solid rgba(255,102,0,0.45);
+  outline-offset: 3px;
+}
 .tenant-card__title {
   color: var(--black);
   font-size: 1rem;
