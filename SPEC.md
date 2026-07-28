@@ -7,7 +7,7 @@ Rebuild gagarina106.ru as a static HTML/CSS/JS site, styled like ankar-group.ru 
 - **Name:** Автотехцентр "ГАГАРИНА 106"
 - **Location:** Калининград, ул. Ю. Гагарина, 106
 - **Phone:** +7 (4012) 76 93 08
-- **Email:** dtp050@ya.ru
+- **Email:** gagarina106@bk.ru
 - **Hours:** Пн-Пт 9:00-18:00, Суббота 9:00-14:00, Воскресенье — выходной
 - **Social:** VK: vk.com/gagarina_106, YouTube: UC123OrWH0w3ZylfB8EACUyg, Dzen: gagarina106_kld
 - **Yandex Metrika ID:** 46619493
