@@ -381,6 +381,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .promo-banner__title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 8px; }
 .promo-banner__desc { font-size: 1.05rem; opacity: 0.9; margin-bottom: var(--gap); }
+.promo-banner__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 /* ====== REVIEWS ====== */
 .reviews-grid {
@@ -740,6 +746,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .page-hero__title span { display: block; }
   .promo-banner { padding-left: 0; padding-right: 0; }
   .promo-banner .container { padding: 0 16px; }
+  .promo-banner__actions { gap: 10px; }
 }
 
 @media (max-width: 480px) {
