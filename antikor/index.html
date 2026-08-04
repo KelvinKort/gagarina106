@@ -24,7 +24,23 @@
       .content-section .container>*{max-width:100%!important}
       .page-hero .container{padding:0 16px}
       .stats-row{padding:0!important}
+      .zinc-grid{grid-template-columns:1fr!important}
+      .zinc-card{padding:20px 16px!important}
+      .zinc-media-grid{grid-template-columns:1fr!important}
     }
+    .zinc-section{margin:36px 0;background:#f7f7f7;border-radius:8px;padding:28px}
+    .zinc-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:24px;align-items:center}
+    .zinc-eyebrow{display:inline-flex;margin-bottom:10px;color:#FF6600;font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .zinc-lead{font-size:1.05rem;color:#333}
+    .zinc-card{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+    .zinc-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0 0!important;padding-left:0!important}
+    .zinc-points li{padding:12px 14px!important;background:#fff;border-left:3px solid #FF6600;border-radius:8px;font-weight:600}
+    .zinc-points li::before{display:none}
+    .zinc-media{overflow:hidden;border-radius:8px;background:#fff;border:1px solid #e5e5e5}
+    .zinc-media img{width:100%;height:100%;object-fit:cover}
+    .zinc-media-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+    .zinc-note{margin-top:14px!important;font-size:.92rem;color:#666!important}
+    @media(max-width:768px){.zinc-section{margin:28px 0;padding:20px 14px}.zinc-points{grid-template-columns:1fr}.zinc-lead{font-size:1rem}.zinc-media img{height:auto;object-fit:contain}}
   </style>
 </head>
 <body>
@@ -107,6 +123,40 @@
         </ul>
         <div><span style="display:inline-block;background:#FF6600;color:#fff;padding:8px 20px;border-radius:8px;font-weight:700;font-size:1.1rem">от 5 000 ₽</span></div>
       </div>
+    </div>
+
+    <div class="zinc-section">
+      <div class="zinc-grid">
+        <div>
+          <span class="zinc-eyebrow">Усиленная защита металла</span>
+          <h2>Цинковый грунт в системе антикора</h2>
+          <p class="zinc-lead">Для подготовленных металлических участков можем использовать цинконаполненный грунт TEKKO Primer Zinc. Он наносится первым слоем перед основным антикоррозийным покрытием и помогает усилить защиту металла на уровне основания.</p>
+          <p>Цинк принимает на себя часть коррозионной нагрузки: при воздействии влаги, соли и дорожных реагентов первым реагирует цинковый слой, а не сталь кузова. Это снижает риск быстрого развития ржавчины под покрытием.</p>
+          <ul class="zinc-points">
+            <li>Днище автомобиля</li>
+            <li>Колёсные арки</li>
+            <li>Сварные швы</li>
+            <li>Ремонтные зоны после зачистки</li>
+            <li>Участки со старым повреждённым покрытием</li>
+            <li>Зоны риска подплёночной коррозии</li>
+          </ul>
+        </div>
+        <div class="zinc-card">
+          <div class="zinc-media">
+            <img src="../img/antikor/primer-zinc-material.jpg" alt="TEKKO Primer Zinc — цинконаполненный грунт для подготовки металла перед антикором">
+          </div>
+          <p class="zinc-note">Это не самостоятельное финишное покрытие, а технологический первый слой. Сверху наносится основной антикор, который защищает от воды, соли, грязи, пескоструя и механического износа.</p>
+        </div>
+      </div>
+      <div class="zinc-media-grid">
+        <div class="zinc-media">
+          <img src="../img/antikor/primer-zinc-system.jpg" alt="Схема работы цинкового грунта и финишного антикоррозийного покрытия">
+        </div>
+        <div class="zinc-media">
+          <img src="../img/antikor/primer-zinc-application.jpg" alt="Технология нанесения TEKKO Primer Zinc перед финишным антикоррозийным покрытием">
+        </div>
+      </div>
+      <p class="zinc-note">По данным лабораторных испытаний производителя, стойкость системы TEKKO Primer Zinc с финишным покрытием проверялась в камере соляного тумана. На практике результат зависит от состояния металла, подготовки поверхности и условий эксплуатации автомобиля.</p>
     </div>
 
     <h2>Антикоррозийная обработка кузова</h2>
